@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Wed Nov  9 18:06:16 2022
+# Process ID: 31025
+# Current directory: /home/hoailuan/Research/2023/proj-lane_detection_alveo/QuanNet_Alveo/QuanNet_Alveo.runs/impl_1
+# Command line: vivado -log SoC_wrapper.vdi -applog -stack 10000 -product Vivado -messageDb vivado.pb -mode batch -source SoC_wrapper.tcl -notrace
+# Log file: /home/hoailuan/Research/2023/proj-lane_detection_alveo/QuanNet_Alveo/QuanNet_Alveo.runs/impl_1/SoC_wrapper.vdi
+# Journal file: /home/hoailuan/Research/2023/proj-lane_detection_alveo/QuanNet_Alveo/QuanNet_Alveo.runs/impl_1/vivado.jou
+#-----------------------------------------------------------
+source SoC_wrapper.tcl -notrace

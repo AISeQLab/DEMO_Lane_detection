@@ -1,0 +1,2631 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Tue Nov  8 16:50:23 2022
+# Process ID: 18678
+# Current directory: /home/hoailuan/Research/2023/proj-lane_detection_alveo
+# Command line: vivado -stack 10000
+# Log file: /home/hoailuan/Research/2023/proj-lane_detection_alveo/vivado.log
+# Journal file: /home/hoailuan/Research/2023/proj-lane_detection_alveo/vivado.jou
+#-----------------------------------------------------------
+start_gui
+create_project QuanNet_Alveo /home/hoailuan/Research/2023/proj-lane_detection_alveo/QuanNet_Alveo -part xcu280-fsvh2892-2L-e
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/xilinx/Vivado/2020.2/data/ip'.
+create_project: Time (s): cpu = 00:00:15 ; elapsed = 00:00:08 . Memory (MB): peak = 9635.379 ; gain = 56.074 ; free physical = 240333 ; free virtual = 250838
+set_property board_part xilinx.com:au280:part0:1.1 [current_project]
+create_peripheral comparch user QuantLaneNet 1.0 -dir /home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo
+add_peripheral_interface S00_AXI -interface_mode slave -axi_type full [ipx::find_open_core comparch:user:QuantLaneNet:1.0]
+generate_peripheral -driver -bfm_example_design -debug_hw_example_design [ipx::find_open_core comparch:user:QuantLaneNet:1.0]
+write_peripheral [ipx::find_open_core comparch:user:QuantLaneNet:1.0]
+set_property  ip_repo_paths  /home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0 [current_project]
+update_ip_catalog -rebuild
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0'.
+ipx::edit_ip_in_project -upgrade true -name edit_QuantLaneNet_v1_0 -directory /home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo /home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/component.xml
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/xilinx/Vivado/2020.2/data/ip'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0'.
+INFO: [IP_Flow 19-795] Syncing license key meta-data
+ipx::edit_ip_in_project: Time (s): cpu = 00:00:15 ; elapsed = 00:00:06 . Memory (MB): peak = 9876.383 ; gain = 37.020 ; free physical = 240274 ; free virtual = 250792
+update_compile_order -fileset sources_1
+add_files -norecurse -copy_to /home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src {/home/hoailuan/Research/2023/proj-lane_detection_alveo/Virtex_7/QuantLaneNet/vivado_project/ip_repo/QuantLaneNet_1.0/src/line_buffer.v /home/hoailuan/Research/2023/proj-lane_detection_alveo/Virtex_7/QuantLaneNet/vivado_project/ip_repo/QuantLaneNet_1.0/src/block_ram_single_port.v /home/hoailuan/Research/2023/proj-lane_detection_alveo/Virtex_7/QuantLaneNet/vivado_project/ip_repo/QuantLaneNet_1.0/src/line_buffer_datapath.v /home/hoailuan/Research/2023/proj-lane_detection_alveo/Virtex_7/QuantLaneNet/vivado_project/ip_repo/QuantLaneNet_1.0/src/macc_8bit_single.v /home/hoailuan/Research/2023/proj-lane_detection_alveo/Virtex_7/QuantLaneNet/vivado_project/ip_repo/QuantLaneNet_1.0/src/model.v /home/hoailuan/Research/2023/proj-lane_detection_alveo/Virtex_7/QuantLaneNet/vivado_project/ip_repo/QuantLaneNet_1.0/src/post_process.v /home/hoailuan/Research/2023/proj-lane_detection_alveo/Virtex_7/QuantLaneNet/vivado_project/ip_repo/QuantLaneNet_1.0/src/sigmoid.v /home/hoailuan/Research/2023/proj-lane_detection_alveo/Virtex_7/QuantLaneNet/vivado_project/ip_repo/QuantLaneNet_1.0/src/pe_outcha_single.v /home/hoailuan/Research/2023/proj-lane_detection_alveo/Virtex_7/QuantLaneNet/vivado_project/ip_repo/QuantLaneNet_1.0/src/pe_incha_double.v /home/hoailuan/Research/2023/proj-lane_detection_alveo/Virtex_7/QuantLaneNet/vivado_project/ip_repo/QuantLaneNet_1.0/src/fifo_dual_read.v /home/hoailuan/Research/2023/proj-lane_detection_alveo/Virtex_7/QuantLaneNet/vivado_project/ip_repo/QuantLaneNet_1.0/src/pe_outcha_double_controller.v /home/hoailuan/Research/2023/proj-lane_detection_alveo/Virtex_7/QuantLaneNet/vivado_project/ip_repo/QuantLaneNet_1.0/src/mult_8bit_dual.v /home/hoailuan/Research/2023/proj-lane_detection_alveo/Virtex_7/QuantLaneNet/vivado_project/ip_repo/QuantLaneNet_1.0/src/pe_incha_quadruple.v /home/hoailuan/Research/2023/proj-lane_detection_alveo/Virtex_7/QuantLaneNet/vivado_project/ip_repo/QuantLaneNet_1.0/src/pe_incha_single.v /home/hoailuan/Research/2023/proj-lane_detection_alveo/Virtex_7/QuantLaneNet/vivado_project/ip_repo/QuantLaneNet_1.0/src/fifo_counter.v /home/hoailuan/Research/2023/proj-lane_detection_alveo/Virtex_7/QuantLaneNet/vivado_project/ip_repo/QuantLaneNet_1.0/src/conv.v /home/hoailuan/Research/2023/proj-lane_detection_alveo/Virtex_7/QuantLaneNet/vivado_project/ip_repo/QuantLaneNet_1.0/src/kernel_write_assist.v /home/hoailuan/Research/2023/proj-lane_detection_alveo/Virtex_7/QuantLaneNet/vivado_project/ip_repo/QuantLaneNet_1.0/src/pe_controller.v /home/hoailuan/Research/2023/proj-lane_detection_alveo/Virtex_7/QuantLaneNet/vivado_project/ip_repo/QuantLaneNet_1.0/src/pe_outcha_double.v /home/hoailuan/Research/2023/proj-lane_detection_alveo/Virtex_7/QuantLaneNet/vivado_project/ip_repo/QuantLaneNet_1.0/src/pe_outcha_double_obuffer.v /home/hoailuan/Research/2023/proj-lane_detection_alveo/Virtex_7/QuantLaneNet/vivado_project/ip_repo/QuantLaneNet_1.0/src/top.v /home/hoailuan/Research/2023/proj-lane_detection_alveo/Virtex_7/QuantLaneNet/vivado_project/ip_repo/QuantLaneNet_1.0/src/adder_tree.v /home/hoailuan/Research/2023/proj-lane_detection_alveo/Virtex_7/QuantLaneNet/vivado_project/ip_repo/QuantLaneNet_1.0/src/block_ram_multi_word.v /home/hoailuan/Research/2023/proj-lane_detection_alveo/Virtex_7/QuantLaneNet/vivado_project/ip_repo/QuantLaneNet_1.0/src/QuantLaneNet_AXI.v /home/hoailuan/Research/2023/proj-lane_detection_alveo/Virtex_7/QuantLaneNet/vivado_project/ip_repo/QuantLaneNet_1.0/src/fifo_single_read.v /home/hoailuan/Research/2023/proj-lane_detection_alveo/Virtex_7/QuantLaneNet/vivado_project/ip_repo/QuantLaneNet_1.0/src/block_ram_dual_port.v /home/hoailuan/Research/2023/proj-lane_detection_alveo/Virtex_7/QuantLaneNet/vivado_project/ip_repo/QuantLaneNet_1.0/src/fifo_64bits_to_fifo_24bits_input.v /home/hoailuan/Research/2023/proj-lane_detection_alveo/Virtex_7/QuantLaneNet/vivado_project/ip_repo/QuantLaneNet_1.0/src/macc_8bit_single_1_to_n.v /home/hoailuan/Research/2023/proj-lane_detection_alveo/Virtex_7/QuantLaneNet/vivado_project/ip_repo/QuantLaneNet_1.0/src/fifo_64bits_to_mem_16bits_weight.v /home/hoailuan/Research/2023/proj-lane_detection_alveo/Virtex_7/QuantLaneNet/vivado_project/ip_repo/QuantLaneNet_1.0/src/line_buffer_controller.v /home/hoailuan/Research/2023/proj-lane_detection_alveo/Virtex_7/QuantLaneNet/vivado_project/ip_repo/QuantLaneNet_1.0/src/QuantLaneNet_S00_AXI.v /home/hoailuan/Research/2023/proj-lane_detection_alveo/Virtex_7/QuantLaneNet/vivado_project/ip_repo/QuantLaneNet_1.0/src/pe_incha_obuffer.v /home/hoailuan/Research/2023/proj-lane_detection_alveo/Virtex_7/QuantLaneNet/vivado_project/ip_repo/QuantLaneNet_1.0/src/block_ram_multi_word_dual_port.v /home/hoailuan/Research/2023/proj-lane_detection_alveo/Virtex_7/QuantLaneNet/vivado_project/ip_repo/QuantLaneNet_1.0/src/macc_8bit_dual.v}
+update_compile_order -fileset sources_1
+ipx::merge_project_changes files [ipx::current_core]
+WARNING: [IP_Flow 19-5226] Project source file '/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/component.xml' ignored by IP packager.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/QuantLaneNet_AXI.v'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/QuantLaneNet_S00_AXI.v'.
+ipx::merge_project_changes hdl_parameters [ipx::current_core]
+WARNING: [IP_Flow 19-5226] Project source file '/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/component.xml' ignored by IP packager.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/QuantLaneNet_AXI.v'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/QuantLaneNet_S00_AXI.v'.
+WARNING: [IP_Flow 19-4300] HDL parameter 'C_S00_AXI_DATA_WIDTH' has its value changed from '32' to '64'.
+WARNING: [IP_Flow 19-4300] HDL parameter 'C_S00_AXI_ADDR_WIDTH' has its value changed from '6' to '20'.
+WARNING: [IP_Flow 19-4300] HDL parameter 'C_S00_AXI_AWUSER_WIDTH' has its value changed from '1' to '0'.
+WARNING: [IP_Flow 19-4300] HDL parameter 'C_S00_AXI_ARUSER_WIDTH' has its value changed from '1' to '0'.
+WARNING: [IP_Flow 19-4300] HDL parameter 'C_S00_AXI_WUSER_WIDTH' has its value changed from '1' to '0'.
+WARNING: [IP_Flow 19-4300] HDL parameter 'C_S00_AXI_RUSER_WIDTH' has its value changed from '1' to '0'.
+WARNING: [IP_Flow 19-4300] HDL parameter 'C_S00_AXI_BUSER_WIDTH' has its value changed from '1' to '0'.
+INFO: [IP_Flow 19-3166] Bus Interface 'S00_AXI': References existing memory map 'S00_AXI'.
+ERROR: [Common 17-39] 'ipx::merge_project_changes' failed due to earlier errors.
+set_property widget {comboBox} [ipgui::get_guiparamspec -name "C_S00_AXI_DATA_WIDTH" -component [ipx::current_core] ]
+set_property value_validation_list 64 [ipx::get_user_parameters C_S00_AXI_DATA_WIDTH -of_objects [ipx::current_core]]
+launch_runs synth_1 -jobs 24
+[Tue Nov  8 17:00:12 2022] Launched synth_1...
+Run output will be captured here: /home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/edit_QuantLaneNet_v1_0.runs/synth_1/runme.log
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xcu280-fsvh2892-2L-e
+INFO: [Device 21-403] Loading part xcu280-fsvh2892-2L-e
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 12090.574 ; gain = 0.000 ; free physical = 238819 ; free virtual = 249498
+INFO: [Netlist 29-17] Analyzing 19 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2020.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 12832.496 ; gain = 0.000 ; free physical = 238708 ; free virtual = 249387
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 18 instances were transformed.
+  IBUF => IBUF (IBUFCTRL, INBUF): 18 instances
+
+open_run: Time (s): cpu = 00:00:35 ; elapsed = 00:00:32 . Memory (MB): peak = 13295.551 ; gain = 2037.949 ; free physical = 238342 ; free virtual = 249024
+ipx::update_checksums [ipx::current_core]
+ipx::save_core [ipx::current_core]
+reset_run synth_1
+launch_runs synth_1 -jobs 24
+[Tue Nov  8 17:26:41 2022] Launched synth_1...
+Run output will be captured here: /home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/edit_QuantLaneNet_v1_0.runs/synth_1/runme.log
+close_design
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xcu280-fsvh2892-2L-e
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 14831.086 ; gain = 0.000 ; free physical = 238928 ; free virtual = 249776
+INFO: [Netlist 29-17] Analyzing 19 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2020.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 14831.086 ; gain = 0.000 ; free physical = 238860 ; free virtual = 249708
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 18 instances were transformed.
+  IBUF => IBUF (IBUFCTRL, INBUF): 18 instances
+
+open_run: Time (s): cpu = 00:00:22 ; elapsed = 00:00:06 . Memory (MB): peak = 15038.488 ; gain = 207.402 ; free physical = 238567 ; free virtual = 249415
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+Command: synth_design -rtl -rtl_skip_mlo -name rtl_1
+Starting synth_design
+Using part: xcu280-fsvh2892-2L-e
+Top: QuantLaneNet_v1_0
+WARNING: [Synth 8-1958] event expressions must result in a singular type [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/hdl/QuantLaneNet_v1_0_S00_AXI.v:598]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 15038.488 ; gain = 0.000 ; free physical = 238336 ; free virtual = 249184
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'QuantLaneNet_v1_0' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/hdl/QuantLaneNet_v1_0.v:4]
+	Parameter C_S00_AXI_ID_WIDTH bound to: 1 - type: integer 
+	Parameter C_S00_AXI_DATA_WIDTH bound to: 64 - type: integer 
+	Parameter C_S00_AXI_ADDR_WIDTH bound to: 20 - type: integer 
+	Parameter C_S00_AXI_AWUSER_WIDTH bound to: 0 - type: integer 
+	Parameter C_S00_AXI_ARUSER_WIDTH bound to: 0 - type: integer 
+	Parameter C_S00_AXI_WUSER_WIDTH bound to: 0 - type: integer 
+	Parameter C_S00_AXI_RUSER_WIDTH bound to: 0 - type: integer 
+	Parameter C_S00_AXI_BUSER_WIDTH bound to: 0 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'QuantLaneNet_v1_0_S00_AXI' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/hdl/QuantLaneNet_v1_0_S00_AXI.v:4]
+	Parameter C_S_AXI_ID_WIDTH bound to: 1 - type: integer 
+	Parameter C_S_AXI_DATA_WIDTH bound to: 64 - type: integer 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 20 - type: integer 
+	Parameter C_S_AXI_AWUSER_WIDTH bound to: 0 - type: integer 
+	Parameter C_S_AXI_ARUSER_WIDTH bound to: 0 - type: integer 
+	Parameter C_S_AXI_WUSER_WIDTH bound to: 0 - type: integer 
+	Parameter C_S_AXI_RUSER_WIDTH bound to: 0 - type: integer 
+	Parameter C_S_AXI_BUSER_WIDTH bound to: 0 - type: integer 
+	Parameter ADDR_LSB bound to: 3 - type: integer 
+	Parameter OPT_MEM_ADDR_BITS bound to: 3 - type: integer 
+	Parameter USER_NUM_MEM bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'QuantLaneNet_v1_0_S00_AXI' (1#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/hdl/QuantLaneNet_v1_0_S00_AXI.v:4]
+INFO: [Synth 8-6157] synthesizing module 'top' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/top.v:3]
+	Parameter AXI_ADDR_WIDTH bound to: 20 - type: integer 
+	Parameter IN_WIDTH bound to: 512 - type: integer 
+	Parameter IN_HEIGHT bound to: 256 - type: integer 
+	Parameter NUM_LANES bound to: 4 - type: integer 
+	Parameter NUM_WEIGHTS bound to: 76323 - type: integer 
+	Parameter OUT_WIDTH bound to: 64 - type: integer 
+	Parameter OUT_HEIGHT bound to: 32 - type: integer 
+	Parameter OFFSET_INPUT bound to: 0 - type: integer 
+	Parameter OFFSET_OUTPUT bound to: 393216 - type: integer 
+	Parameter OFFSET_OVALID bound to: 395264 - type: integer 
+	Parameter OFFSET_BUSY bound to: 395272 - type: integer 
+	Parameter OFFSET_RESET bound to: 395280 - type: integer 
+	Parameter OFFSET_WEIGHT bound to: 395288 - type: integer 
+	Parameter OFFSET_CLOCK_CNT bound to: 589824 - type: integer 
+	Parameter CLOCK_CNT_IDLE bound to: 0 - type: integer 
+	Parameter CLOCK_CNT_BUSY bound to: 1 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'fifo_single_read' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/fifo_single_read.v:3]
+	Parameter DATA_WIDTH bound to: 56 - type: integer 
+	Parameter DEPTH bound to: 1024 - type: integer 
+	Parameter ALMOST_FULL_THRES bound to: 512 - type: integer 
+	Parameter ADDR_WIDTH bound to: 10 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'fifo_counter' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/fifo_counter.v:3]
+	Parameter DEPTH bound to: 1024 - type: integer 
+	Parameter ADDR_WIDTH bound to: 10 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'fifo_counter' (2#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/fifo_counter.v:3]
+INFO: [Synth 8-6157] synthesizing module 'block_ram_single_port' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/block_ram_single_port.v:3]
+	Parameter DATA_WIDTH bound to: 56 - type: integer 
+	Parameter DEPTH bound to: 1024 - type: integer 
+	Parameter RAM_STYLE bound to: auto - type: string 
+	Parameter OUTPUT_REGISTER bound to: false - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'block_ram_single_port' (3#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/block_ram_single_port.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'fifo_single_read' (4#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/fifo_single_read.v:3]
+INFO: [Synth 8-6157] synthesizing module 'fifo_64bits_to_fifo_24bits_input' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/fifo_64bits_to_fifo_24bits_input.v:3]
+	Parameter STATE_0 bound to: 0 - type: integer 
+	Parameter STATE_1 bound to: 1 - type: integer 
+	Parameter STATE_2 bound to: 2 - type: integer 
+	Parameter STATE_3 bound to: 3 - type: integer 
+	Parameter STATE_4 bound to: 4 - type: integer 
+	Parameter STATE_5 bound to: 5 - type: integer 
+	Parameter STATE_6 bound to: 6 - type: integer 
+	Parameter STATE_7 bound to: 7 - type: integer 
+INFO: [Synth 8-226] default block is never used [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/fifo_64bits_to_fifo_24bits_input.v:48]
+INFO: [Synth 8-226] default block is never used [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/fifo_64bits_to_fifo_24bits_input.v:78]
+INFO: [Synth 8-6155] done synthesizing module 'fifo_64bits_to_fifo_24bits_input' (5#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/fifo_64bits_to_fifo_24bits_input.v:3]
+INFO: [Synth 8-6157] synthesizing module 'fifo_single_read__parameterized0' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/fifo_single_read.v:3]
+	Parameter DATA_WIDTH bound to: 64 - type: integer 
+	Parameter DEPTH bound to: 1024 - type: integer 
+	Parameter ALMOST_FULL_THRES bound to: 512 - type: integer 
+	Parameter ADDR_WIDTH bound to: 10 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'block_ram_single_port__parameterized0' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/block_ram_single_port.v:3]
+	Parameter DATA_WIDTH bound to: 64 - type: integer 
+	Parameter DEPTH bound to: 1024 - type: integer 
+	Parameter RAM_STYLE bound to: auto - type: string 
+	Parameter OUTPUT_REGISTER bound to: false - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'block_ram_single_port__parameterized0' (5#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/block_ram_single_port.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'fifo_single_read__parameterized0' (5#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/fifo_single_read.v:3]
+INFO: [Synth 8-6157] synthesizing module 'fifo_64bits_to_mem_16bits_weight' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/fifo_64bits_to_mem_16bits_weight.v:3]
+	Parameter NUM_WEIGHTS bound to: 76323 - type: integer 
+	Parameter IDLE bound to: 0 - type: integer 
+	Parameter STATE_0 bound to: 1 - type: integer 
+	Parameter STATE_1 bound to: 2 - type: integer 
+	Parameter STATE_2 bound to: 3 - type: integer 
+	Parameter STATE_3 bound to: 4 - type: integer 
+	Parameter COUNTER_LIMIT bound to: 76324 - type: integer 
+	Parameter COUNTER_WIDTH bound to: 17 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'fifo_64bits_to_mem_16bits_weight' (6#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/fifo_64bits_to_mem_16bits_weight.v:3]
+INFO: [Synth 8-6157] synthesizing module 'model' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/model.v:3]
+INFO: [Synth 8-6157] synthesizing module 'conv' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/conv.v:3]
+	Parameter IN_WIDTH bound to: 512 - type: integer 
+	Parameter IN_HEIGHT bound to: 256 - type: integer 
+	Parameter OUTPUT_MODE bound to: relu - type: string 
+	Parameter UNROLL_MODE bound to: incha - type: string 
+	Parameter COMPUTE_FACTOR bound to: quadruple - type: string 
+	Parameter KERNEL_0 bound to: 3 - type: integer 
+	Parameter KERNEL_1 bound to: 3 - type: integer 
+	Parameter DILATION_0 bound to: 2 - type: integer 
+	Parameter DILATION_1 bound to: 2 - type: integer 
+	Parameter PADDING_0 bound to: 2 - type: integer 
+	Parameter PADDING_1 bound to: 2 - type: integer 
+	Parameter STRIDE_0 bound to: 1 - type: integer 
+	Parameter STRIDE_1 bound to: 1 - type: integer 
+	Parameter IN_CHANNEL bound to: 3 - type: integer 
+	Parameter OUT_CHANNEL bound to: 8 - type: integer 
+	Parameter KERNEL_BASE_ADDR bound to: 0 - type: integer 
+	Parameter BIAS_BASE_ADDR bound to: 75960 - type: integer 
+	Parameter MACC_COEFF_BASE_ADDR bound to: 76304 - type: integer 
+	Parameter LAYER_SCALE_BASE_ADDR bound to: 76305 - type: integer 
+	Parameter OUTPUT_DATA_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'pe_incha_quadruple' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/pe_incha_quadruple.v:3]
+	Parameter IN_WIDTH bound to: 512 - type: integer 
+	Parameter IN_HEIGHT bound to: 256 - type: integer 
+	Parameter IN_CHANNEL bound to: 3 - type: integer 
+	Parameter OUT_CHANNEL bound to: 8 - type: integer 
+	Parameter OUTPUT_MODE bound to: relu - type: string 
+	Parameter KERNEL_0 bound to: 3 - type: integer 
+	Parameter KERNEL_1 bound to: 3 - type: integer 
+	Parameter DILATION_0 bound to: 2 - type: integer 
+	Parameter DILATION_1 bound to: 2 - type: integer 
+	Parameter PADDING_0 bound to: 2 - type: integer 
+	Parameter PADDING_1 bound to: 2 - type: integer 
+	Parameter STRIDE_0 bound to: 1 - type: integer 
+	Parameter STRIDE_1 bound to: 1 - type: integer 
+	Parameter KERNEL_BASE_ADDR bound to: 0 - type: integer 
+	Parameter BIAS_BASE_ADDR bound to: 75960 - type: integer 
+	Parameter MACC_COEFF_BASE_ADDR bound to: 76304 - type: integer 
+	Parameter LAYER_SCALE_BASE_ADDR bound to: 76305 - type: integer 
+	Parameter KERNEL_PTS bound to: 9 - type: integer 
+	Parameter OUTPUT_DATA_WIDTH bound to: 8 - type: integer 
+	Parameter NUM_KERNEL_WEIGHTS bound to: 216 - type: integer 
+	Parameter QUOTIENT_WIDTH bound to: 6 - type: integer 
+	Parameter COUNTER_MAX bound to: 2 - type: integer 
+	Parameter MACC_OUTPUT_DATA_WIDTH bound to: 21 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'kernel_write_assist' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/kernel_write_assist.v:3]
+	Parameter DIVIDEND_WIDTH bound to: 12 - type: integer 
+	Parameter DIVISOR bound to: 54 - type: integer 
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'kernel_write_assist' (7#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/kernel_write_assist.v:3]
+INFO: [Synth 8-6157] synthesizing module 'pe_controller' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/pe_controller.v:3]
+	Parameter IDLE bound to: 0 - type: integer 
+	Parameter BUSY bound to: 1 - type: integer 
+INFO: [Synth 8-226] default block is never used [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/pe_controller.v:30]
+INFO: [Synth 8-6155] done synthesizing module 'pe_controller' (8#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/pe_controller.v:3]
+INFO: [Synth 8-6157] synthesizing module 'block_ram_multi_word_dual_port' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/block_ram_multi_word_dual_port.v:3]
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter DEPTH bound to: 4 - type: integer 
+	Parameter NUM_WORDS bound to: 54 - type: integer 
+	Parameter RAM_STYLE bound to: auto - type: string 
+	Parameter OUTPUT_REGISTER bound to: true - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'block_ram_multi_word_dual_port' (9#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/block_ram_multi_word_dual_port.v:3]
+INFO: [Synth 8-6157] synthesizing module 'block_ram_multi_word_dual_port__parameterized0' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/block_ram_multi_word_dual_port.v:3]
+	Parameter DATA_WIDTH bound to: 16 - type: integer 
+	Parameter DEPTH bound to: 4 - type: integer 
+	Parameter NUM_WORDS bound to: 2 - type: integer 
+	Parameter RAM_STYLE bound to: auto - type: string 
+	Parameter OUTPUT_REGISTER bound to: true - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'block_ram_multi_word_dual_port__parameterized0' (9#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/block_ram_multi_word_dual_port.v:3]
+INFO: [Synth 8-6157] synthesizing module 'macc_8bit_dual' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/macc_8bit_dual.v:3]
+	Parameter NUM_INPUTS bound to: 27 - type: integer 
+	Parameter ADDER_LAYERS bound to: 5 - type: integer 
+	Parameter OUTPUT_DATA_WIDTH bound to: 21 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'mult_8bit_dual' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/mult_8bit_dual.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'mult_8bit_dual' (10#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/mult_8bit_dual.v:3]
+INFO: [Synth 8-6157] synthesizing module 'adder_tree' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/adder_tree.v:3]
+	Parameter DATA_WIDTH bound to: 16 - type: integer 
+	Parameter NUM_INPUTS bound to: 27 - type: integer 
+	Parameter ADDER_LAYERS bound to: 5 - type: integer 
+	Parameter OUTPUT_DATA_WIDTH bound to: 21 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'adder_tree' (11#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/adder_tree.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'macc_8bit_dual' (12#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/macc_8bit_dual.v:3]
+INFO: [Synth 8-6157] synthesizing module 'pe_incha_obuffer' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/pe_incha_obuffer.v:3]
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter NUM_INPUTS bound to: 4 - type: integer 
+	Parameter OUT_CHANNEL bound to: 8 - type: integer 
+	Parameter COUNTER_MAX bound to: 2 - type: integer 
+	Parameter OBUFFER_DEPTH bound to: 8 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'pe_incha_obuffer' (13#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/pe_incha_obuffer.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'pe_incha_quadruple' (14#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/pe_incha_quadruple.v:3]
+INFO: [Synth 8-6157] synthesizing module 'line_buffer' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/line_buffer.v:3]
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter IN_CHANNEL bound to: 3 - type: integer 
+	Parameter IN_WIDTH bound to: 512 - type: integer 
+	Parameter IN_HEIGHT bound to: 256 - type: integer 
+	Parameter KERNEL_0 bound to: 3 - type: integer 
+	Parameter KERNEL_1 bound to: 3 - type: integer 
+	Parameter DILATION_0 bound to: 2 - type: integer 
+	Parameter DILATION_1 bound to: 2 - type: integer 
+	Parameter PADDING_0 bound to: 2 - type: integer 
+	Parameter PADDING_1 bound to: 2 - type: integer 
+	Parameter STRIDE_0 bound to: 1 - type: integer 
+	Parameter STRIDE_1 bound to: 1 - type: integer 
+	Parameter PIXEL_WIDTH bound to: 24 - type: integer 
+	Parameter TOTAL_WIDTH bound to: 516 - type: integer 
+	Parameter WINDOW_0 bound to: 5 - type: integer 
+	Parameter WINDOW_1 bound to: 5 - type: integer 
+	Parameter KERNEL_PTS bound to: 9 - type: integer 
+	Parameter BLANK_PTS bound to: 4 - type: integer 
+	Parameter BLANK_PTS_SAFE bound to: 4 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'line_buffer_controller' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/line_buffer_controller.v:3]
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter IN_CHANNEL bound to: 3 - type: integer 
+	Parameter IN_WIDTH bound to: 512 - type: integer 
+	Parameter IN_HEIGHT bound to: 256 - type: integer 
+	Parameter KERNEL_0 bound to: 3 - type: integer 
+	Parameter KERNEL_1 bound to: 3 - type: integer 
+	Parameter DILATION_0 bound to: 2 - type: integer 
+	Parameter DILATION_1 bound to: 2 - type: integer 
+	Parameter PADDING_0 bound to: 2 - type: integer 
+	Parameter PADDING_1 bound to: 2 - type: integer 
+	Parameter STRIDE_0 bound to: 1 - type: integer 
+	Parameter STRIDE_1 bound to: 1 - type: integer 
+	Parameter PIXEL_WIDTH bound to: 24 - type: integer 
+	Parameter TOTAL_WIDTH bound to: 516 - type: integer 
+	Parameter WINDOW_0 bound to: 5 - type: integer 
+	Parameter WINDOW_1 bound to: 5 - type: integer 
+	Parameter KERNEL_PTS bound to: 9 - type: integer 
+	Parameter BLANK_PTS bound to: 4 - type: integer 
+	Parameter BLANK_PTS_SAFE bound to: 4 - type: integer 
+	Parameter COL_CNT_WIDTH bound to: 11 - type: integer 
+	Parameter ROW_CNT_WIDTH bound to: 10 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'line_buffer_controller' (15#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/line_buffer_controller.v:3]
+INFO: [Synth 8-6157] synthesizing module 'line_buffer_datapath' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/line_buffer_datapath.v:3]
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter IN_CHANNEL bound to: 3 - type: integer 
+	Parameter IN_WIDTH bound to: 512 - type: integer 
+	Parameter KERNEL_0 bound to: 3 - type: integer 
+	Parameter KERNEL_1 bound to: 3 - type: integer 
+	Parameter DILATION_0 bound to: 2 - type: integer 
+	Parameter DILATION_1 bound to: 2 - type: integer 
+	Parameter PADDING_0 bound to: 2 - type: integer 
+	Parameter PADDING_1 bound to: 2 - type: integer 
+	Parameter PIXEL_WIDTH bound to: 24 - type: integer 
+	Parameter TOTAL_WIDTH bound to: 516 - type: integer 
+	Parameter WINDOW_0 bound to: 5 - type: integer 
+	Parameter WINDOW_1 bound to: 5 - type: integer 
+	Parameter KERNEL_PTS bound to: 9 - type: integer 
+	Parameter BLANK_PTS bound to: 4 - type: integer 
+	Parameter BLANK_PTS_SAFE bound to: 4 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'fifo_single_read__parameterized1' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/fifo_single_read.v:3]
+	Parameter DATA_WIDTH bound to: 24 - type: integer 
+	Parameter DEPTH bound to: 1026 - type: integer 
+	Parameter ALMOST_FULL_THRES bound to: 10 - type: integer 
+	Parameter ADDR_WIDTH bound to: 11 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'fifo_counter__parameterized0' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/fifo_counter.v:3]
+	Parameter DEPTH bound to: 1026 - type: integer 
+	Parameter ADDR_WIDTH bound to: 11 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'fifo_counter__parameterized0' (15#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/fifo_counter.v:3]
+INFO: [Synth 8-6157] synthesizing module 'block_ram_single_port__parameterized1' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/block_ram_single_port.v:3]
+	Parameter DATA_WIDTH bound to: 24 - type: integer 
+	Parameter DEPTH bound to: 1026 - type: integer 
+	Parameter RAM_STYLE bound to: auto - type: string 
+	Parameter OUTPUT_REGISTER bound to: false - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'block_ram_single_port__parameterized1' (15#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/block_ram_single_port.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'fifo_single_read__parameterized1' (15#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/fifo_single_read.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'line_buffer_datapath' (16#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/line_buffer_datapath.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'line_buffer' (17#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/line_buffer.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'conv' (18#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/conv.v:3]
+INFO: [Synth 8-6157] synthesizing module 'fifo_single_read__parameterized2' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/fifo_single_read.v:3]
+	Parameter DATA_WIDTH bound to: 64 - type: integer 
+	Parameter DEPTH bound to: 1024 - type: integer 
+	Parameter ALMOST_FULL_THRES bound to: 10 - type: integer 
+	Parameter ADDR_WIDTH bound to: 10 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'fifo_single_read__parameterized2' (18#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/fifo_single_read.v:3]
+INFO: [Synth 8-6157] synthesizing module 'conv__parameterized0' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/conv.v:3]
+	Parameter IN_WIDTH bound to: 512 - type: integer 
+	Parameter IN_HEIGHT bound to: 256 - type: integer 
+	Parameter OUTPUT_MODE bound to: relu - type: string 
+	Parameter UNROLL_MODE bound to: incha - type: string 
+	Parameter COMPUTE_FACTOR bound to: quadruple - type: string 
+	Parameter KERNEL_0 bound to: 3 - type: integer 
+	Parameter KERNEL_1 bound to: 3 - type: integer 
+	Parameter DILATION_0 bound to: 2 - type: integer 
+	Parameter DILATION_1 bound to: 2 - type: integer 
+	Parameter PADDING_0 bound to: 2 - type: integer 
+	Parameter PADDING_1 bound to: 2 - type: integer 
+	Parameter STRIDE_0 bound to: 1 - type: integer 
+	Parameter STRIDE_1 bound to: 1 - type: integer 
+	Parameter IN_CHANNEL bound to: 8 - type: integer 
+	Parameter OUT_CHANNEL bound to: 8 - type: integer 
+	Parameter KERNEL_BASE_ADDR bound to: 216 - type: integer 
+	Parameter BIAS_BASE_ADDR bound to: 75968 - type: integer 
+	Parameter MACC_COEFF_BASE_ADDR bound to: 76305 - type: integer 
+	Parameter LAYER_SCALE_BASE_ADDR bound to: 76306 - type: integer 
+	Parameter OUTPUT_DATA_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'pe_incha_quadruple__parameterized0' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/pe_incha_quadruple.v:3]
+	Parameter IN_WIDTH bound to: 512 - type: integer 
+	Parameter IN_HEIGHT bound to: 256 - type: integer 
+	Parameter IN_CHANNEL bound to: 8 - type: integer 
+	Parameter OUT_CHANNEL bound to: 8 - type: integer 
+	Parameter OUTPUT_MODE bound to: relu - type: string 
+	Parameter KERNEL_0 bound to: 3 - type: integer 
+	Parameter KERNEL_1 bound to: 3 - type: integer 
+	Parameter DILATION_0 bound to: 2 - type: integer 
+	Parameter DILATION_1 bound to: 2 - type: integer 
+	Parameter PADDING_0 bound to: 2 - type: integer 
+	Parameter PADDING_1 bound to: 2 - type: integer 
+	Parameter STRIDE_0 bound to: 1 - type: integer 
+	Parameter STRIDE_1 bound to: 1 - type: integer 
+	Parameter KERNEL_BASE_ADDR bound to: 216 - type: integer 
+	Parameter BIAS_BASE_ADDR bound to: 75968 - type: integer 
+	Parameter MACC_COEFF_BASE_ADDR bound to: 76305 - type: integer 
+	Parameter LAYER_SCALE_BASE_ADDR bound to: 76306 - type: integer 
+	Parameter KERNEL_PTS bound to: 9 - type: integer 
+	Parameter OUTPUT_DATA_WIDTH bound to: 8 - type: integer 
+	Parameter NUM_KERNEL_WEIGHTS bound to: 576 - type: integer 
+	Parameter QUOTIENT_WIDTH bound to: 8 - type: integer 
+	Parameter COUNTER_MAX bound to: 2 - type: integer 
+	Parameter MACC_OUTPUT_DATA_WIDTH bound to: 23 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'kernel_write_assist__parameterized0' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/kernel_write_assist.v:3]
+	Parameter DIVIDEND_WIDTH bound to: 16 - type: integer 
+	Parameter DIVISOR bound to: 144 - type: integer 
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'kernel_write_assist__parameterized0' (18#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/kernel_write_assist.v:3]
+INFO: [Synth 8-6157] synthesizing module 'block_ram_multi_word_dual_port__parameterized1' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/block_ram_multi_word_dual_port.v:3]
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter DEPTH bound to: 4 - type: integer 
+	Parameter NUM_WORDS bound to: 144 - type: integer 
+	Parameter RAM_STYLE bound to: auto - type: string 
+	Parameter OUTPUT_REGISTER bound to: true - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'block_ram_multi_word_dual_port__parameterized1' (18#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/block_ram_multi_word_dual_port.v:3]
+INFO: [Synth 8-6157] synthesizing module 'macc_8bit_dual__parameterized0' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/macc_8bit_dual.v:3]
+	Parameter NUM_INPUTS bound to: 72 - type: integer 
+	Parameter ADDER_LAYERS bound to: 7 - type: integer 
+	Parameter OUTPUT_DATA_WIDTH bound to: 23 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'adder_tree__parameterized0' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/adder_tree.v:3]
+	Parameter DATA_WIDTH bound to: 16 - type: integer 
+	Parameter NUM_INPUTS bound to: 72 - type: integer 
+	Parameter ADDER_LAYERS bound to: 7 - type: integer 
+	Parameter OUTPUT_DATA_WIDTH bound to: 23 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'adder_tree__parameterized0' (18#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/adder_tree.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'macc_8bit_dual__parameterized0' (18#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/macc_8bit_dual.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'pe_incha_quadruple__parameterized0' (18#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/pe_incha_quadruple.v:3]
+INFO: [Synth 8-6157] synthesizing module 'line_buffer__parameterized0' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/line_buffer.v:3]
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter IN_CHANNEL bound to: 8 - type: integer 
+	Parameter IN_WIDTH bound to: 512 - type: integer 
+	Parameter IN_HEIGHT bound to: 256 - type: integer 
+	Parameter KERNEL_0 bound to: 3 - type: integer 
+	Parameter KERNEL_1 bound to: 3 - type: integer 
+	Parameter DILATION_0 bound to: 2 - type: integer 
+	Parameter DILATION_1 bound to: 2 - type: integer 
+	Parameter PADDING_0 bound to: 2 - type: integer 
+	Parameter PADDING_1 bound to: 2 - type: integer 
+	Parameter STRIDE_0 bound to: 1 - type: integer 
+	Parameter STRIDE_1 bound to: 1 - type: integer 
+	Parameter PIXEL_WIDTH bound to: 64 - type: integer 
+	Parameter TOTAL_WIDTH bound to: 516 - type: integer 
+	Parameter WINDOW_0 bound to: 5 - type: integer 
+	Parameter WINDOW_1 bound to: 5 - type: integer 
+	Parameter KERNEL_PTS bound to: 9 - type: integer 
+	Parameter BLANK_PTS bound to: 4 - type: integer 
+	Parameter BLANK_PTS_SAFE bound to: 4 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'line_buffer_controller__parameterized0' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/line_buffer_controller.v:3]
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter IN_CHANNEL bound to: 8 - type: integer 
+	Parameter IN_WIDTH bound to: 512 - type: integer 
+	Parameter IN_HEIGHT bound to: 256 - type: integer 
+	Parameter KERNEL_0 bound to: 3 - type: integer 
+	Parameter KERNEL_1 bound to: 3 - type: integer 
+	Parameter DILATION_0 bound to: 2 - type: integer 
+	Parameter DILATION_1 bound to: 2 - type: integer 
+	Parameter PADDING_0 bound to: 2 - type: integer 
+	Parameter PADDING_1 bound to: 2 - type: integer 
+	Parameter STRIDE_0 bound to: 1 - type: integer 
+	Parameter STRIDE_1 bound to: 1 - type: integer 
+	Parameter PIXEL_WIDTH bound to: 64 - type: integer 
+	Parameter TOTAL_WIDTH bound to: 516 - type: integer 
+	Parameter WINDOW_0 bound to: 5 - type: integer 
+	Parameter WINDOW_1 bound to: 5 - type: integer 
+	Parameter KERNEL_PTS bound to: 9 - type: integer 
+	Parameter BLANK_PTS bound to: 4 - type: integer 
+	Parameter BLANK_PTS_SAFE bound to: 4 - type: integer 
+	Parameter COL_CNT_WIDTH bound to: 11 - type: integer 
+	Parameter ROW_CNT_WIDTH bound to: 10 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'line_buffer_controller__parameterized0' (18#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/line_buffer_controller.v:3]
+INFO: [Synth 8-6157] synthesizing module 'line_buffer_datapath__parameterized0' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/line_buffer_datapath.v:3]
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter IN_CHANNEL bound to: 8 - type: integer 
+	Parameter IN_WIDTH bound to: 512 - type: integer 
+	Parameter KERNEL_0 bound to: 3 - type: integer 
+	Parameter KERNEL_1 bound to: 3 - type: integer 
+	Parameter DILATION_0 bound to: 2 - type: integer 
+	Parameter DILATION_1 bound to: 2 - type: integer 
+	Parameter PADDING_0 bound to: 2 - type: integer 
+	Parameter PADDING_1 bound to: 2 - type: integer 
+	Parameter PIXEL_WIDTH bound to: 64 - type: integer 
+	Parameter TOTAL_WIDTH bound to: 516 - type: integer 
+	Parameter WINDOW_0 bound to: 5 - type: integer 
+	Parameter WINDOW_1 bound to: 5 - type: integer 
+	Parameter KERNEL_PTS bound to: 9 - type: integer 
+	Parameter BLANK_PTS bound to: 4 - type: integer 
+	Parameter BLANK_PTS_SAFE bound to: 4 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'fifo_single_read__parameterized3' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/fifo_single_read.v:3]
+	Parameter DATA_WIDTH bound to: 64 - type: integer 
+	Parameter DEPTH bound to: 1026 - type: integer 
+	Parameter ALMOST_FULL_THRES bound to: 10 - type: integer 
+	Parameter ADDR_WIDTH bound to: 11 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'block_ram_single_port__parameterized2' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/block_ram_single_port.v:3]
+	Parameter DATA_WIDTH bound to: 64 - type: integer 
+	Parameter DEPTH bound to: 1026 - type: integer 
+	Parameter RAM_STYLE bound to: auto - type: string 
+	Parameter OUTPUT_REGISTER bound to: false - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'block_ram_single_port__parameterized2' (18#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/block_ram_single_port.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'fifo_single_read__parameterized3' (18#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/fifo_single_read.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'line_buffer_datapath__parameterized0' (18#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/line_buffer_datapath.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'line_buffer__parameterized0' (18#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/line_buffer.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'conv__parameterized0' (18#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/conv.v:3]
+INFO: [Synth 8-6157] synthesizing module 'fifo_single_read__parameterized4' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/fifo_single_read.v:3]
+	Parameter DATA_WIDTH bound to: 64 - type: integer 
+	Parameter DEPTH bound to: 512 - type: integer 
+	Parameter ALMOST_FULL_THRES bound to: 10 - type: integer 
+	Parameter ADDR_WIDTH bound to: 9 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'fifo_counter__parameterized1' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/fifo_counter.v:3]
+	Parameter DEPTH bound to: 512 - type: integer 
+	Parameter ADDR_WIDTH bound to: 9 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'fifo_counter__parameterized1' (18#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/fifo_counter.v:3]
+INFO: [Synth 8-6157] synthesizing module 'block_ram_single_port__parameterized3' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/block_ram_single_port.v:3]
+	Parameter DATA_WIDTH bound to: 64 - type: integer 
+	Parameter DEPTH bound to: 512 - type: integer 
+	Parameter RAM_STYLE bound to: auto - type: string 
+	Parameter OUTPUT_REGISTER bound to: false - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'block_ram_single_port__parameterized3' (18#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/block_ram_single_port.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'fifo_single_read__parameterized4' (18#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/fifo_single_read.v:3]
+INFO: [Synth 8-6157] synthesizing module 'conv__parameterized1' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/conv.v:3]
+	Parameter IN_WIDTH bound to: 512 - type: integer 
+	Parameter IN_HEIGHT bound to: 256 - type: integer 
+	Parameter OUTPUT_MODE bound to: relu - type: string 
+	Parameter UNROLL_MODE bound to: incha - type: string 
+	Parameter COMPUTE_FACTOR bound to: quadruple - type: string 
+	Parameter KERNEL_0 bound to: 2 - type: integer 
+	Parameter KERNEL_1 bound to: 2 - type: integer 
+	Parameter DILATION_0 bound to: 1 - type: integer 
+	Parameter DILATION_1 bound to: 1 - type: integer 
+	Parameter PADDING_0 bound to: 0 - type: integer 
+	Parameter PADDING_1 bound to: 0 - type: integer 
+	Parameter STRIDE_0 bound to: 2 - type: integer 
+	Parameter STRIDE_1 bound to: 2 - type: integer 
+	Parameter IN_CHANNEL bound to: 8 - type: integer 
+	Parameter OUT_CHANNEL bound to: 16 - type: integer 
+	Parameter KERNEL_BASE_ADDR bound to: 792 - type: integer 
+	Parameter BIAS_BASE_ADDR bound to: 75976 - type: integer 
+	Parameter MACC_COEFF_BASE_ADDR bound to: 76306 - type: integer 
+	Parameter LAYER_SCALE_BASE_ADDR bound to: 76307 - type: integer 
+	Parameter OUTPUT_DATA_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'pe_incha_quadruple__parameterized1' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/pe_incha_quadruple.v:3]
+	Parameter IN_WIDTH bound to: 512 - type: integer 
+	Parameter IN_HEIGHT bound to: 256 - type: integer 
+	Parameter IN_CHANNEL bound to: 8 - type: integer 
+	Parameter OUT_CHANNEL bound to: 16 - type: integer 
+	Parameter OUTPUT_MODE bound to: relu - type: string 
+	Parameter KERNEL_0 bound to: 2 - type: integer 
+	Parameter KERNEL_1 bound to: 2 - type: integer 
+	Parameter DILATION_0 bound to: 1 - type: integer 
+	Parameter DILATION_1 bound to: 1 - type: integer 
+	Parameter PADDING_0 bound to: 0 - type: integer 
+	Parameter PADDING_1 bound to: 0 - type: integer 
+	Parameter STRIDE_0 bound to: 2 - type: integer 
+	Parameter STRIDE_1 bound to: 2 - type: integer 
+	Parameter KERNEL_BASE_ADDR bound to: 792 - type: integer 
+	Parameter BIAS_BASE_ADDR bound to: 75976 - type: integer 
+	Parameter MACC_COEFF_BASE_ADDR bound to: 76306 - type: integer 
+	Parameter LAYER_SCALE_BASE_ADDR bound to: 76307 - type: integer 
+	Parameter KERNEL_PTS bound to: 4 - type: integer 
+	Parameter OUTPUT_DATA_WIDTH bound to: 8 - type: integer 
+	Parameter NUM_KERNEL_WEIGHTS bound to: 512 - type: integer 
+	Parameter QUOTIENT_WIDTH bound to: 6 - type: integer 
+	Parameter COUNTER_MAX bound to: 4 - type: integer 
+	Parameter MACC_OUTPUT_DATA_WIDTH bound to: 21 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'kernel_write_assist__parameterized1' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/kernel_write_assist.v:3]
+	Parameter DIVIDEND_WIDTH bound to: 12 - type: integer 
+	Parameter DIVISOR bound to: 64 - type: integer 
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'kernel_write_assist__parameterized1' (18#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/kernel_write_assist.v:3]
+INFO: [Synth 8-6157] synthesizing module 'block_ram_multi_word_dual_port__parameterized2' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/block_ram_multi_word_dual_port.v:3]
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter DEPTH bound to: 8 - type: integer 
+	Parameter NUM_WORDS bound to: 64 - type: integer 
+	Parameter RAM_STYLE bound to: auto - type: string 
+	Parameter OUTPUT_REGISTER bound to: true - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'block_ram_multi_word_dual_port__parameterized2' (18#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/block_ram_multi_word_dual_port.v:3]
+INFO: [Synth 8-6157] synthesizing module 'block_ram_multi_word_dual_port__parameterized3' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/block_ram_multi_word_dual_port.v:3]
+	Parameter DATA_WIDTH bound to: 16 - type: integer 
+	Parameter DEPTH bound to: 8 - type: integer 
+	Parameter NUM_WORDS bound to: 2 - type: integer 
+	Parameter RAM_STYLE bound to: auto - type: string 
+	Parameter OUTPUT_REGISTER bound to: true - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'block_ram_multi_word_dual_port__parameterized3' (18#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/block_ram_multi_word_dual_port.v:3]
+INFO: [Synth 8-6157] synthesizing module 'macc_8bit_dual__parameterized1' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/macc_8bit_dual.v:3]
+	Parameter NUM_INPUTS bound to: 32 - type: integer 
+	Parameter ADDER_LAYERS bound to: 5 - type: integer 
+	Parameter OUTPUT_DATA_WIDTH bound to: 21 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'adder_tree__parameterized1' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/adder_tree.v:3]
+	Parameter DATA_WIDTH bound to: 16 - type: integer 
+	Parameter NUM_INPUTS bound to: 32 - type: integer 
+	Parameter ADDER_LAYERS bound to: 5 - type: integer 
+	Parameter OUTPUT_DATA_WIDTH bound to: 21 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'adder_tree__parameterized1' (18#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/adder_tree.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'macc_8bit_dual__parameterized1' (18#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/macc_8bit_dual.v:3]
+INFO: [Synth 8-6157] synthesizing module 'pe_incha_obuffer__parameterized0' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/pe_incha_obuffer.v:3]
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter NUM_INPUTS bound to: 4 - type: integer 
+	Parameter OUT_CHANNEL bound to: 16 - type: integer 
+	Parameter COUNTER_MAX bound to: 4 - type: integer 
+	Parameter OBUFFER_DEPTH bound to: 16 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'pe_incha_obuffer__parameterized0' (18#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/pe_incha_obuffer.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'pe_incha_quadruple__parameterized1' (18#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/pe_incha_quadruple.v:3]
+INFO: [Synth 8-6157] synthesizing module 'line_buffer__parameterized1' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/line_buffer.v:3]
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter IN_CHANNEL bound to: 8 - type: integer 
+	Parameter IN_WIDTH bound to: 512 - type: integer 
+	Parameter IN_HEIGHT bound to: 256 - type: integer 
+	Parameter KERNEL_0 bound to: 2 - type: integer 
+	Parameter KERNEL_1 bound to: 2 - type: integer 
+	Parameter DILATION_0 bound to: 1 - type: integer 
+	Parameter DILATION_1 bound to: 1 - type: integer 
+	Parameter PADDING_0 bound to: 0 - type: integer 
+	Parameter PADDING_1 bound to: 0 - type: integer 
+	Parameter STRIDE_0 bound to: 2 - type: integer 
+	Parameter STRIDE_1 bound to: 2 - type: integer 
+	Parameter PIXEL_WIDTH bound to: 64 - type: integer 
+	Parameter TOTAL_WIDTH bound to: 512 - type: integer 
+	Parameter WINDOW_0 bound to: 2 - type: integer 
+	Parameter WINDOW_1 bound to: 2 - type: integer 
+	Parameter KERNEL_PTS bound to: 4 - type: integer 
+	Parameter BLANK_PTS bound to: 0 - type: integer 
+	Parameter BLANK_PTS_SAFE bound to: 1 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'line_buffer_controller__parameterized1' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/line_buffer_controller.v:3]
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter IN_CHANNEL bound to: 8 - type: integer 
+	Parameter IN_WIDTH bound to: 512 - type: integer 
+	Parameter IN_HEIGHT bound to: 256 - type: integer 
+	Parameter KERNEL_0 bound to: 2 - type: integer 
+	Parameter KERNEL_1 bound to: 2 - type: integer 
+	Parameter DILATION_0 bound to: 1 - type: integer 
+	Parameter DILATION_1 bound to: 1 - type: integer 
+	Parameter PADDING_0 bound to: 0 - type: integer 
+	Parameter PADDING_1 bound to: 0 - type: integer 
+	Parameter STRIDE_0 bound to: 2 - type: integer 
+	Parameter STRIDE_1 bound to: 2 - type: integer 
+	Parameter PIXEL_WIDTH bound to: 64 - type: integer 
+	Parameter TOTAL_WIDTH bound to: 512 - type: integer 
+	Parameter WINDOW_0 bound to: 2 - type: integer 
+	Parameter WINDOW_1 bound to: 2 - type: integer 
+	Parameter KERNEL_PTS bound to: 4 - type: integer 
+	Parameter BLANK_PTS bound to: 0 - type: integer 
+	Parameter BLANK_PTS_SAFE bound to: 1 - type: integer 
+	Parameter COL_CNT_WIDTH bound to: 10 - type: integer 
+	Parameter ROW_CNT_WIDTH bound to: 9 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'line_buffer_controller__parameterized1' (18#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/line_buffer_controller.v:3]
+INFO: [Synth 8-6157] synthesizing module 'line_buffer_datapath__parameterized1' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/line_buffer_datapath.v:3]
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter IN_CHANNEL bound to: 8 - type: integer 
+	Parameter IN_WIDTH bound to: 512 - type: integer 
+	Parameter KERNEL_0 bound to: 2 - type: integer 
+	Parameter KERNEL_1 bound to: 2 - type: integer 
+	Parameter DILATION_0 bound to: 1 - type: integer 
+	Parameter DILATION_1 bound to: 1 - type: integer 
+	Parameter PADDING_0 bound to: 0 - type: integer 
+	Parameter PADDING_1 bound to: 0 - type: integer 
+	Parameter PIXEL_WIDTH bound to: 64 - type: integer 
+	Parameter TOTAL_WIDTH bound to: 512 - type: integer 
+	Parameter WINDOW_0 bound to: 2 - type: integer 
+	Parameter WINDOW_1 bound to: 2 - type: integer 
+	Parameter KERNEL_PTS bound to: 4 - type: integer 
+	Parameter BLANK_PTS bound to: 0 - type: integer 
+	Parameter BLANK_PTS_SAFE bound to: 1 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'fifo_single_read__parameterized5' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/fifo_single_read.v:3]
+	Parameter DATA_WIDTH bound to: 64 - type: integer 
+	Parameter DEPTH bound to: 509 - type: integer 
+	Parameter ALMOST_FULL_THRES bound to: 10 - type: integer 
+	Parameter ADDR_WIDTH bound to: 9 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'fifo_counter__parameterized2' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/fifo_counter.v:3]
+	Parameter DEPTH bound to: 509 - type: integer 
+	Parameter ADDR_WIDTH bound to: 9 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'fifo_counter__parameterized2' (18#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/fifo_counter.v:3]
+INFO: [Synth 8-6157] synthesizing module 'block_ram_single_port__parameterized4' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/block_ram_single_port.v:3]
+	Parameter DATA_WIDTH bound to: 64 - type: integer 
+	Parameter DEPTH bound to: 509 - type: integer 
+	Parameter RAM_STYLE bound to: auto - type: string 
+	Parameter OUTPUT_REGISTER bound to: false - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'block_ram_single_port__parameterized4' (18#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/block_ram_single_port.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'fifo_single_read__parameterized5' (18#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/fifo_single_read.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'line_buffer_datapath__parameterized1' (18#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/line_buffer_datapath.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'line_buffer__parameterized1' (18#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/line_buffer.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'conv__parameterized1' (18#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/conv.v:3]
+INFO: [Synth 8-6157] synthesizing module 'fifo_single_read__parameterized6' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/fifo_single_read.v:3]
+	Parameter DATA_WIDTH bound to: 128 - type: integer 
+	Parameter DEPTH bound to: 256 - type: integer 
+	Parameter ALMOST_FULL_THRES bound to: 10 - type: integer 
+	Parameter ADDR_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'fifo_counter__parameterized3' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/fifo_counter.v:3]
+	Parameter DEPTH bound to: 256 - type: integer 
+	Parameter ADDR_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'fifo_counter__parameterized3' (18#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/fifo_counter.v:3]
+INFO: [Synth 8-6157] synthesizing module 'block_ram_single_port__parameterized5' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/block_ram_single_port.v:3]
+	Parameter DATA_WIDTH bound to: 128 - type: integer 
+	Parameter DEPTH bound to: 256 - type: integer 
+	Parameter RAM_STYLE bound to: auto - type: string 
+	Parameter OUTPUT_REGISTER bound to: false - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'block_ram_single_port__parameterized5' (18#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/block_ram_single_port.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'fifo_single_read__parameterized6' (18#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/fifo_single_read.v:3]
+INFO: [Synth 8-6157] synthesizing module 'conv__parameterized2' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/conv.v:3]
+	Parameter IN_WIDTH bound to: 256 - type: integer 
+	Parameter IN_HEIGHT bound to: 128 - type: integer 
+	Parameter OUTPUT_MODE bound to: relu - type: string 
+	Parameter UNROLL_MODE bound to: incha - type: string 
+	Parameter COMPUTE_FACTOR bound to: double - type: string 
+	Parameter KERNEL_0 bound to: 3 - type: integer 
+	Parameter KERNEL_1 bound to: 3 - type: integer 
+	Parameter DILATION_0 bound to: 2 - type: integer 
+	Parameter DILATION_1 bound to: 2 - type: integer 
+	Parameter PADDING_0 bound to: 2 - type: integer 
+	Parameter PADDING_1 bound to: 2 - type: integer 
+	Parameter STRIDE_0 bound to: 1 - type: integer 
+	Parameter STRIDE_1 bound to: 1 - type: integer 
+	Parameter IN_CHANNEL bound to: 16 - type: integer 
+	Parameter OUT_CHANNEL bound to: 16 - type: integer 
+	Parameter KERNEL_BASE_ADDR bound to: 1304 - type: integer 
+	Parameter BIAS_BASE_ADDR bound to: 75992 - type: integer 
+	Parameter MACC_COEFF_BASE_ADDR bound to: 76307 - type: integer 
+	Parameter LAYER_SCALE_BASE_ADDR bound to: 76308 - type: integer 
+	Parameter OUTPUT_DATA_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'pe_incha_double' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/pe_incha_double.v:3]
+	Parameter IN_WIDTH bound to: 256 - type: integer 
+	Parameter IN_HEIGHT bound to: 128 - type: integer 
+	Parameter IN_CHANNEL bound to: 16 - type: integer 
+	Parameter OUT_CHANNEL bound to: 16 - type: integer 
+	Parameter OUTPUT_MODE bound to: relu - type: string 
+	Parameter KERNEL_0 bound to: 3 - type: integer 
+	Parameter KERNEL_1 bound to: 3 - type: integer 
+	Parameter DILATION_0 bound to: 2 - type: integer 
+	Parameter DILATION_1 bound to: 2 - type: integer 
+	Parameter PADDING_0 bound to: 2 - type: integer 
+	Parameter PADDING_1 bound to: 2 - type: integer 
+	Parameter STRIDE_0 bound to: 1 - type: integer 
+	Parameter STRIDE_1 bound to: 1 - type: integer 
+	Parameter KERNEL_BASE_ADDR bound to: 1304 - type: integer 
+	Parameter BIAS_BASE_ADDR bound to: 75992 - type: integer 
+	Parameter MACC_COEFF_BASE_ADDR bound to: 76307 - type: integer 
+	Parameter LAYER_SCALE_BASE_ADDR bound to: 76308 - type: integer 
+	Parameter KERNEL_PTS bound to: 9 - type: integer 
+	Parameter OUTPUT_DATA_WIDTH bound to: 8 - type: integer 
+	Parameter NUM_KERNEL_WEIGHTS bound to: 2304 - type: integer 
+	Parameter QUOTIENT_WIDTH bound to: 8 - type: integer 
+	Parameter COUNTER_MAX bound to: 8 - type: integer 
+	Parameter MACC_OUTPUT_DATA_WIDTH bound to: 24 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'block_ram_multi_word_dual_port__parameterized4' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/block_ram_multi_word_dual_port.v:3]
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter DEPTH bound to: 16 - type: integer 
+	Parameter NUM_WORDS bound to: 144 - type: integer 
+	Parameter RAM_STYLE bound to: auto - type: string 
+	Parameter OUTPUT_REGISTER bound to: true - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'block_ram_multi_word_dual_port__parameterized4' (18#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/block_ram_multi_word_dual_port.v:3]
+INFO: [Synth 8-6157] synthesizing module 'block_ram_dual_port' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/block_ram_dual_port.v:3]
+	Parameter DATA_WIDTH bound to: 16 - type: integer 
+	Parameter DEPTH bound to: 16 - type: integer 
+	Parameter RAM_STYLE bound to: auto - type: string 
+	Parameter OUTPUT_REGISTER bound to: true - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'block_ram_dual_port' (19#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/block_ram_dual_port.v:3]
+INFO: [Synth 8-6157] synthesizing module 'macc_8bit_dual__parameterized2' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/macc_8bit_dual.v:3]
+	Parameter NUM_INPUTS bound to: 144 - type: integer 
+	Parameter ADDER_LAYERS bound to: 8 - type: integer 
+	Parameter OUTPUT_DATA_WIDTH bound to: 24 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'adder_tree__parameterized2' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/adder_tree.v:3]
+	Parameter DATA_WIDTH bound to: 16 - type: integer 
+	Parameter NUM_INPUTS bound to: 144 - type: integer 
+	Parameter ADDER_LAYERS bound to: 8 - type: integer 
+	Parameter OUTPUT_DATA_WIDTH bound to: 24 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'adder_tree__parameterized2' (19#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/adder_tree.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'macc_8bit_dual__parameterized2' (19#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/macc_8bit_dual.v:3]
+INFO: [Synth 8-6157] synthesizing module 'pe_incha_obuffer__parameterized1' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/pe_incha_obuffer.v:3]
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter NUM_INPUTS bound to: 2 - type: integer 
+	Parameter OUT_CHANNEL bound to: 16 - type: integer 
+	Parameter COUNTER_MAX bound to: 8 - type: integer 
+	Parameter OBUFFER_DEPTH bound to: 16 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'pe_incha_obuffer__parameterized1' (19#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/pe_incha_obuffer.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'pe_incha_double' (20#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/pe_incha_double.v:3]
+INFO: [Synth 8-6157] synthesizing module 'line_buffer__parameterized2' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/line_buffer.v:3]
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter IN_CHANNEL bound to: 16 - type: integer 
+	Parameter IN_WIDTH bound to: 256 - type: integer 
+	Parameter IN_HEIGHT bound to: 128 - type: integer 
+	Parameter KERNEL_0 bound to: 3 - type: integer 
+	Parameter KERNEL_1 bound to: 3 - type: integer 
+	Parameter DILATION_0 bound to: 2 - type: integer 
+	Parameter DILATION_1 bound to: 2 - type: integer 
+	Parameter PADDING_0 bound to: 2 - type: integer 
+	Parameter PADDING_1 bound to: 2 - type: integer 
+	Parameter STRIDE_0 bound to: 1 - type: integer 
+	Parameter STRIDE_1 bound to: 1 - type: integer 
+	Parameter PIXEL_WIDTH bound to: 128 - type: integer 
+	Parameter TOTAL_WIDTH bound to: 260 - type: integer 
+	Parameter WINDOW_0 bound to: 5 - type: integer 
+	Parameter WINDOW_1 bound to: 5 - type: integer 
+	Parameter KERNEL_PTS bound to: 9 - type: integer 
+	Parameter BLANK_PTS bound to: 4 - type: integer 
+	Parameter BLANK_PTS_SAFE bound to: 4 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'line_buffer_controller__parameterized2' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/line_buffer_controller.v:3]
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter IN_CHANNEL bound to: 16 - type: integer 
+	Parameter IN_WIDTH bound to: 256 - type: integer 
+	Parameter IN_HEIGHT bound to: 128 - type: integer 
+	Parameter KERNEL_0 bound to: 3 - type: integer 
+	Parameter KERNEL_1 bound to: 3 - type: integer 
+	Parameter DILATION_0 bound to: 2 - type: integer 
+	Parameter DILATION_1 bound to: 2 - type: integer 
+	Parameter PADDING_0 bound to: 2 - type: integer 
+	Parameter PADDING_1 bound to: 2 - type: integer 
+	Parameter STRIDE_0 bound to: 1 - type: integer 
+	Parameter STRIDE_1 bound to: 1 - type: integer 
+	Parameter PIXEL_WIDTH bound to: 128 - type: integer 
+	Parameter TOTAL_WIDTH bound to: 260 - type: integer 
+	Parameter WINDOW_0 bound to: 5 - type: integer 
+	Parameter WINDOW_1 bound to: 5 - type: integer 
+	Parameter KERNEL_PTS bound to: 9 - type: integer 
+	Parameter BLANK_PTS bound to: 4 - type: integer 
+	Parameter BLANK_PTS_SAFE bound to: 4 - type: integer 
+	Parameter COL_CNT_WIDTH bound to: 10 - type: integer 
+	Parameter ROW_CNT_WIDTH bound to: 9 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'line_buffer_controller__parameterized2' (20#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/line_buffer_controller.v:3]
+INFO: [Synth 8-6157] synthesizing module 'line_buffer_datapath__parameterized2' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/line_buffer_datapath.v:3]
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter IN_CHANNEL bound to: 16 - type: integer 
+	Parameter IN_WIDTH bound to: 256 - type: integer 
+	Parameter KERNEL_0 bound to: 3 - type: integer 
+	Parameter KERNEL_1 bound to: 3 - type: integer 
+	Parameter DILATION_0 bound to: 2 - type: integer 
+	Parameter DILATION_1 bound to: 2 - type: integer 
+	Parameter PADDING_0 bound to: 2 - type: integer 
+	Parameter PADDING_1 bound to: 2 - type: integer 
+	Parameter PIXEL_WIDTH bound to: 128 - type: integer 
+	Parameter TOTAL_WIDTH bound to: 260 - type: integer 
+	Parameter WINDOW_0 bound to: 5 - type: integer 
+	Parameter WINDOW_1 bound to: 5 - type: integer 
+	Parameter KERNEL_PTS bound to: 9 - type: integer 
+	Parameter BLANK_PTS bound to: 4 - type: integer 
+	Parameter BLANK_PTS_SAFE bound to: 4 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'fifo_single_read__parameterized7' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/fifo_single_read.v:3]
+	Parameter DATA_WIDTH bound to: 128 - type: integer 
+	Parameter DEPTH bound to: 514 - type: integer 
+	Parameter ALMOST_FULL_THRES bound to: 10 - type: integer 
+	Parameter ADDR_WIDTH bound to: 10 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'fifo_counter__parameterized4' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/fifo_counter.v:3]
+	Parameter DEPTH bound to: 514 - type: integer 
+	Parameter ADDR_WIDTH bound to: 10 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'fifo_counter__parameterized4' (20#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/fifo_counter.v:3]
+INFO: [Synth 8-6157] synthesizing module 'block_ram_single_port__parameterized6' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/block_ram_single_port.v:3]
+	Parameter DATA_WIDTH bound to: 128 - type: integer 
+	Parameter DEPTH bound to: 514 - type: integer 
+	Parameter RAM_STYLE bound to: auto - type: string 
+	Parameter OUTPUT_REGISTER bound to: false - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'block_ram_single_port__parameterized6' (20#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/block_ram_single_port.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'fifo_single_read__parameterized7' (20#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/fifo_single_read.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'line_buffer_datapath__parameterized2' (20#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/line_buffer_datapath.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'line_buffer__parameterized2' (20#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/line_buffer.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'conv__parameterized2' (20#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/conv.v:3]
+INFO: [Synth 8-6157] synthesizing module 'conv__parameterized3' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/conv.v:3]
+	Parameter IN_WIDTH bound to: 256 - type: integer 
+	Parameter IN_HEIGHT bound to: 128 - type: integer 
+	Parameter OUTPUT_MODE bound to: relu - type: string 
+	Parameter UNROLL_MODE bound to: incha - type: string 
+	Parameter COMPUTE_FACTOR bound to: double - type: string 
+	Parameter KERNEL_0 bound to: 3 - type: integer 
+	Parameter KERNEL_1 bound to: 3 - type: integer 
+	Parameter DILATION_0 bound to: 2 - type: integer 
+	Parameter DILATION_1 bound to: 2 - type: integer 
+	Parameter PADDING_0 bound to: 2 - type: integer 
+	Parameter PADDING_1 bound to: 2 - type: integer 
+	Parameter STRIDE_0 bound to: 1 - type: integer 
+	Parameter STRIDE_1 bound to: 1 - type: integer 
+	Parameter IN_CHANNEL bound to: 16 - type: integer 
+	Parameter OUT_CHANNEL bound to: 16 - type: integer 
+	Parameter KERNEL_BASE_ADDR bound to: 3608 - type: integer 
+	Parameter BIAS_BASE_ADDR bound to: 76008 - type: integer 
+	Parameter MACC_COEFF_BASE_ADDR bound to: 76308 - type: integer 
+	Parameter LAYER_SCALE_BASE_ADDR bound to: 76309 - type: integer 
+	Parameter OUTPUT_DATA_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'pe_incha_double__parameterized0' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/pe_incha_double.v:3]
+	Parameter IN_WIDTH bound to: 256 - type: integer 
+	Parameter IN_HEIGHT bound to: 128 - type: integer 
+	Parameter IN_CHANNEL bound to: 16 - type: integer 
+	Parameter OUT_CHANNEL bound to: 16 - type: integer 
+	Parameter OUTPUT_MODE bound to: relu - type: string 
+	Parameter KERNEL_0 bound to: 3 - type: integer 
+	Parameter KERNEL_1 bound to: 3 - type: integer 
+	Parameter DILATION_0 bound to: 2 - type: integer 
+	Parameter DILATION_1 bound to: 2 - type: integer 
+	Parameter PADDING_0 bound to: 2 - type: integer 
+	Parameter PADDING_1 bound to: 2 - type: integer 
+	Parameter STRIDE_0 bound to: 1 - type: integer 
+	Parameter STRIDE_1 bound to: 1 - type: integer 
+	Parameter KERNEL_BASE_ADDR bound to: 3608 - type: integer 
+	Parameter BIAS_BASE_ADDR bound to: 76008 - type: integer 
+	Parameter MACC_COEFF_BASE_ADDR bound to: 76308 - type: integer 
+	Parameter LAYER_SCALE_BASE_ADDR bound to: 76309 - type: integer 
+	Parameter KERNEL_PTS bound to: 9 - type: integer 
+	Parameter OUTPUT_DATA_WIDTH bound to: 8 - type: integer 
+	Parameter NUM_KERNEL_WEIGHTS bound to: 2304 - type: integer 
+	Parameter QUOTIENT_WIDTH bound to: 8 - type: integer 
+	Parameter COUNTER_MAX bound to: 8 - type: integer 
+	Parameter MACC_OUTPUT_DATA_WIDTH bound to: 24 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'pe_incha_double__parameterized0' (20#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/pe_incha_double.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'conv__parameterized3' (20#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/conv.v:3]
+INFO: [Synth 8-6157] synthesizing module 'conv__parameterized4' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/conv.v:3]
+	Parameter IN_WIDTH bound to: 256 - type: integer 
+	Parameter IN_HEIGHT bound to: 128 - type: integer 
+	Parameter OUTPUT_MODE bound to: relu - type: string 
+	Parameter UNROLL_MODE bound to: incha - type: string 
+	Parameter COMPUTE_FACTOR bound to: double - type: string 
+	Parameter KERNEL_0 bound to: 2 - type: integer 
+	Parameter KERNEL_1 bound to: 2 - type: integer 
+	Parameter DILATION_0 bound to: 1 - type: integer 
+	Parameter DILATION_1 bound to: 1 - type: integer 
+	Parameter PADDING_0 bound to: 0 - type: integer 
+	Parameter PADDING_1 bound to: 0 - type: integer 
+	Parameter STRIDE_0 bound to: 2 - type: integer 
+	Parameter STRIDE_1 bound to: 2 - type: integer 
+	Parameter IN_CHANNEL bound to: 16 - type: integer 
+	Parameter OUT_CHANNEL bound to: 32 - type: integer 
+	Parameter KERNEL_BASE_ADDR bound to: 5912 - type: integer 
+	Parameter BIAS_BASE_ADDR bound to: 76024 - type: integer 
+	Parameter MACC_COEFF_BASE_ADDR bound to: 76309 - type: integer 
+	Parameter LAYER_SCALE_BASE_ADDR bound to: 76310 - type: integer 
+	Parameter OUTPUT_DATA_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'pe_incha_double__parameterized1' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/pe_incha_double.v:3]
+	Parameter IN_WIDTH bound to: 256 - type: integer 
+	Parameter IN_HEIGHT bound to: 128 - type: integer 
+	Parameter IN_CHANNEL bound to: 16 - type: integer 
+	Parameter OUT_CHANNEL bound to: 32 - type: integer 
+	Parameter OUTPUT_MODE bound to: relu - type: string 
+	Parameter KERNEL_0 bound to: 2 - type: integer 
+	Parameter KERNEL_1 bound to: 2 - type: integer 
+	Parameter DILATION_0 bound to: 1 - type: integer 
+	Parameter DILATION_1 bound to: 1 - type: integer 
+	Parameter PADDING_0 bound to: 0 - type: integer 
+	Parameter PADDING_1 bound to: 0 - type: integer 
+	Parameter STRIDE_0 bound to: 2 - type: integer 
+	Parameter STRIDE_1 bound to: 2 - type: integer 
+	Parameter KERNEL_BASE_ADDR bound to: 5912 - type: integer 
+	Parameter BIAS_BASE_ADDR bound to: 76024 - type: integer 
+	Parameter MACC_COEFF_BASE_ADDR bound to: 76309 - type: integer 
+	Parameter LAYER_SCALE_BASE_ADDR bound to: 76310 - type: integer 
+	Parameter KERNEL_PTS bound to: 4 - type: integer 
+	Parameter OUTPUT_DATA_WIDTH bound to: 8 - type: integer 
+	Parameter NUM_KERNEL_WEIGHTS bound to: 2048 - type: integer 
+	Parameter QUOTIENT_WIDTH bound to: 6 - type: integer 
+	Parameter COUNTER_MAX bound to: 16 - type: integer 
+	Parameter MACC_OUTPUT_DATA_WIDTH bound to: 22 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'block_ram_multi_word_dual_port__parameterized5' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/block_ram_multi_word_dual_port.v:3]
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter DEPTH bound to: 32 - type: integer 
+	Parameter NUM_WORDS bound to: 64 - type: integer 
+	Parameter RAM_STYLE bound to: auto - type: string 
+	Parameter OUTPUT_REGISTER bound to: true - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'block_ram_multi_word_dual_port__parameterized5' (20#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/block_ram_multi_word_dual_port.v:3]
+INFO: [Synth 8-6157] synthesizing module 'block_ram_dual_port__parameterized0' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/block_ram_dual_port.v:3]
+	Parameter DATA_WIDTH bound to: 16 - type: integer 
+	Parameter DEPTH bound to: 32 - type: integer 
+	Parameter RAM_STYLE bound to: auto - type: string 
+	Parameter OUTPUT_REGISTER bound to: true - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'block_ram_dual_port__parameterized0' (20#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/block_ram_dual_port.v:3]
+INFO: [Synth 8-6157] synthesizing module 'macc_8bit_dual__parameterized3' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/macc_8bit_dual.v:3]
+	Parameter NUM_INPUTS bound to: 64 - type: integer 
+	Parameter ADDER_LAYERS bound to: 6 - type: integer 
+	Parameter OUTPUT_DATA_WIDTH bound to: 22 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'adder_tree__parameterized3' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/adder_tree.v:3]
+	Parameter DATA_WIDTH bound to: 16 - type: integer 
+	Parameter NUM_INPUTS bound to: 64 - type: integer 
+	Parameter ADDER_LAYERS bound to: 6 - type: integer 
+	Parameter OUTPUT_DATA_WIDTH bound to: 22 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'adder_tree__parameterized3' (20#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/adder_tree.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'macc_8bit_dual__parameterized3' (20#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/macc_8bit_dual.v:3]
+INFO: [Synth 8-6157] synthesizing module 'pe_incha_obuffer__parameterized2' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/pe_incha_obuffer.v:3]
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter NUM_INPUTS bound to: 2 - type: integer 
+	Parameter OUT_CHANNEL bound to: 32 - type: integer 
+	Parameter COUNTER_MAX bound to: 16 - type: integer 
+	Parameter OBUFFER_DEPTH bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'pe_incha_obuffer__parameterized2' (20#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/pe_incha_obuffer.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'pe_incha_double__parameterized1' (20#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/pe_incha_double.v:3]
+INFO: [Synth 8-6157] synthesizing module 'line_buffer__parameterized3' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/line_buffer.v:3]
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter IN_CHANNEL bound to: 16 - type: integer 
+	Parameter IN_WIDTH bound to: 256 - type: integer 
+	Parameter IN_HEIGHT bound to: 128 - type: integer 
+	Parameter KERNEL_0 bound to: 2 - type: integer 
+	Parameter KERNEL_1 bound to: 2 - type: integer 
+	Parameter DILATION_0 bound to: 1 - type: integer 
+	Parameter DILATION_1 bound to: 1 - type: integer 
+	Parameter PADDING_0 bound to: 0 - type: integer 
+	Parameter PADDING_1 bound to: 0 - type: integer 
+	Parameter STRIDE_0 bound to: 2 - type: integer 
+	Parameter STRIDE_1 bound to: 2 - type: integer 
+	Parameter PIXEL_WIDTH bound to: 128 - type: integer 
+	Parameter TOTAL_WIDTH bound to: 256 - type: integer 
+	Parameter WINDOW_0 bound to: 2 - type: integer 
+	Parameter WINDOW_1 bound to: 2 - type: integer 
+	Parameter KERNEL_PTS bound to: 4 - type: integer 
+	Parameter BLANK_PTS bound to: 0 - type: integer 
+	Parameter BLANK_PTS_SAFE bound to: 1 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'line_buffer_controller__parameterized3' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/line_buffer_controller.v:3]
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter IN_CHANNEL bound to: 16 - type: integer 
+	Parameter IN_WIDTH bound to: 256 - type: integer 
+	Parameter IN_HEIGHT bound to: 128 - type: integer 
+	Parameter KERNEL_0 bound to: 2 - type: integer 
+	Parameter KERNEL_1 bound to: 2 - type: integer 
+	Parameter DILATION_0 bound to: 1 - type: integer 
+	Parameter DILATION_1 bound to: 1 - type: integer 
+	Parameter PADDING_0 bound to: 0 - type: integer 
+	Parameter PADDING_1 bound to: 0 - type: integer 
+	Parameter STRIDE_0 bound to: 2 - type: integer 
+	Parameter STRIDE_1 bound to: 2 - type: integer 
+	Parameter PIXEL_WIDTH bound to: 128 - type: integer 
+	Parameter TOTAL_WIDTH bound to: 256 - type: integer 
+	Parameter WINDOW_0 bound to: 2 - type: integer 
+	Parameter WINDOW_1 bound to: 2 - type: integer 
+	Parameter KERNEL_PTS bound to: 4 - type: integer 
+	Parameter BLANK_PTS bound to: 0 - type: integer 
+	Parameter BLANK_PTS_SAFE bound to: 1 - type: integer 
+	Parameter COL_CNT_WIDTH bound to: 9 - type: integer 
+	Parameter ROW_CNT_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'line_buffer_controller__parameterized3' (20#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/line_buffer_controller.v:3]
+INFO: [Synth 8-6157] synthesizing module 'line_buffer_datapath__parameterized3' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/line_buffer_datapath.v:3]
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter IN_CHANNEL bound to: 16 - type: integer 
+	Parameter IN_WIDTH bound to: 256 - type: integer 
+	Parameter KERNEL_0 bound to: 2 - type: integer 
+	Parameter KERNEL_1 bound to: 2 - type: integer 
+	Parameter DILATION_0 bound to: 1 - type: integer 
+	Parameter DILATION_1 bound to: 1 - type: integer 
+	Parameter PADDING_0 bound to: 0 - type: integer 
+	Parameter PADDING_1 bound to: 0 - type: integer 
+	Parameter PIXEL_WIDTH bound to: 128 - type: integer 
+	Parameter TOTAL_WIDTH bound to: 256 - type: integer 
+	Parameter WINDOW_0 bound to: 2 - type: integer 
+	Parameter WINDOW_1 bound to: 2 - type: integer 
+	Parameter KERNEL_PTS bound to: 4 - type: integer 
+	Parameter BLANK_PTS bound to: 0 - type: integer 
+	Parameter BLANK_PTS_SAFE bound to: 1 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'fifo_single_read__parameterized8' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/fifo_single_read.v:3]
+	Parameter DATA_WIDTH bound to: 128 - type: integer 
+	Parameter DEPTH bound to: 253 - type: integer 
+	Parameter ALMOST_FULL_THRES bound to: 10 - type: integer 
+	Parameter ADDR_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'fifo_counter__parameterized5' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/fifo_counter.v:3]
+	Parameter DEPTH bound to: 253 - type: integer 
+	Parameter ADDR_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'fifo_counter__parameterized5' (20#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/fifo_counter.v:3]
+INFO: [Synth 8-6157] synthesizing module 'block_ram_single_port__parameterized7' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/block_ram_single_port.v:3]
+	Parameter DATA_WIDTH bound to: 128 - type: integer 
+	Parameter DEPTH bound to: 253 - type: integer 
+	Parameter RAM_STYLE bound to: auto - type: string 
+	Parameter OUTPUT_REGISTER bound to: false - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'block_ram_single_port__parameterized7' (20#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/block_ram_single_port.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'fifo_single_read__parameterized8' (20#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/fifo_single_read.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'line_buffer_datapath__parameterized3' (20#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/line_buffer_datapath.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'line_buffer__parameterized3' (20#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/line_buffer.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'conv__parameterized4' (20#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/conv.v:3]
+INFO: [Synth 8-6157] synthesizing module 'fifo_single_read__parameterized9' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/fifo_single_read.v:3]
+	Parameter DATA_WIDTH bound to: 256 - type: integer 
+	Parameter DEPTH bound to: 128 - type: integer 
+	Parameter ALMOST_FULL_THRES bound to: 10 - type: integer 
+	Parameter ADDR_WIDTH bound to: 7 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'fifo_counter__parameterized6' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/fifo_counter.v:3]
+	Parameter DEPTH bound to: 128 - type: integer 
+	Parameter ADDR_WIDTH bound to: 7 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'fifo_counter__parameterized6' (20#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/fifo_counter.v:3]
+INFO: [Synth 8-6157] synthesizing module 'block_ram_single_port__parameterized8' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/block_ram_single_port.v:3]
+	Parameter DATA_WIDTH bound to: 256 - type: integer 
+	Parameter DEPTH bound to: 128 - type: integer 
+	Parameter RAM_STYLE bound to: auto - type: string 
+	Parameter OUTPUT_REGISTER bound to: false - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'block_ram_single_port__parameterized8' (20#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/block_ram_single_port.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'fifo_single_read__parameterized9' (20#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/fifo_single_read.v:3]
+INFO: [Synth 8-6157] synthesizing module 'conv__parameterized5' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/conv.v:3]
+	Parameter IN_WIDTH bound to: 128 - type: integer 
+	Parameter IN_HEIGHT bound to: 64 - type: integer 
+	Parameter OUTPUT_MODE bound to: relu - type: string 
+	Parameter UNROLL_MODE bound to: incha - type: string 
+	Parameter COMPUTE_FACTOR bound to: single - type: string 
+	Parameter KERNEL_0 bound to: 3 - type: integer 
+	Parameter KERNEL_1 bound to: 3 - type: integer 
+	Parameter DILATION_0 bound to: 2 - type: integer 
+	Parameter DILATION_1 bound to: 2 - type: integer 
+	Parameter PADDING_0 bound to: 2 - type: integer 
+	Parameter PADDING_1 bound to: 2 - type: integer 
+	Parameter STRIDE_0 bound to: 1 - type: integer 
+	Parameter STRIDE_1 bound to: 1 - type: integer 
+	Parameter IN_CHANNEL bound to: 32 - type: integer 
+	Parameter OUT_CHANNEL bound to: 32 - type: integer 
+	Parameter KERNEL_BASE_ADDR bound to: 7960 - type: integer 
+	Parameter BIAS_BASE_ADDR bound to: 76056 - type: integer 
+	Parameter MACC_COEFF_BASE_ADDR bound to: 76310 - type: integer 
+	Parameter LAYER_SCALE_BASE_ADDR bound to: 76311 - type: integer 
+	Parameter OUTPUT_DATA_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'pe_incha_single' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/pe_incha_single.v:3]
+	Parameter IN_WIDTH bound to: 128 - type: integer 
+	Parameter IN_HEIGHT bound to: 64 - type: integer 
+	Parameter IN_CHANNEL bound to: 32 - type: integer 
+	Parameter OUT_CHANNEL bound to: 32 - type: integer 
+	Parameter OUTPUT_MODE bound to: relu - type: string 
+	Parameter KERNEL_0 bound to: 3 - type: integer 
+	Parameter KERNEL_1 bound to: 3 - type: integer 
+	Parameter DILATION_0 bound to: 2 - type: integer 
+	Parameter DILATION_1 bound to: 2 - type: integer 
+	Parameter PADDING_0 bound to: 2 - type: integer 
+	Parameter PADDING_1 bound to: 2 - type: integer 
+	Parameter STRIDE_0 bound to: 1 - type: integer 
+	Parameter STRIDE_1 bound to: 1 - type: integer 
+	Parameter KERNEL_BASE_ADDR bound to: 7960 - type: integer 
+	Parameter BIAS_BASE_ADDR bound to: 76056 - type: integer 
+	Parameter MACC_COEFF_BASE_ADDR bound to: 76310 - type: integer 
+	Parameter LAYER_SCALE_BASE_ADDR bound to: 76311 - type: integer 
+	Parameter KERNEL_PTS bound to: 9 - type: integer 
+	Parameter OUTPUT_DATA_WIDTH bound to: 8 - type: integer 
+	Parameter NUM_KERNEL_WEIGHTS bound to: 9216 - type: integer 
+	Parameter QUOTIENT_WIDTH bound to: 9 - type: integer 
+	Parameter MACC_OUTPUT_DATA_WIDTH bound to: 25 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'kernel_write_assist__parameterized2' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/kernel_write_assist.v:3]
+	Parameter DIVIDEND_WIDTH bound to: 18 - type: integer 
+	Parameter DIVISOR bound to: 288 - type: integer 
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'kernel_write_assist__parameterized2' (20#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/kernel_write_assist.v:3]
+INFO: [Synth 8-6157] synthesizing module 'block_ram_multi_word' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/block_ram_multi_word.v:3]
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter DEPTH bound to: 32 - type: integer 
+	Parameter NUM_WORDS bound to: 288 - type: integer 
+	Parameter RAM_STYLE bound to: auto - type: string 
+	Parameter OUTPUT_REGISTER bound to: true - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'block_ram_multi_word' (21#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/block_ram_multi_word.v:3]
+INFO: [Synth 8-6157] synthesizing module 'block_ram_single_port__parameterized9' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/block_ram_single_port.v:3]
+	Parameter DATA_WIDTH bound to: 16 - type: integer 
+	Parameter DEPTH bound to: 32 - type: integer 
+	Parameter RAM_STYLE bound to: auto - type: string 
+	Parameter OUTPUT_REGISTER bound to: true - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'block_ram_single_port__parameterized9' (21#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/block_ram_single_port.v:3]
+INFO: [Synth 8-6157] synthesizing module 'macc_8bit_single' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/macc_8bit_single.v:3]
+	Parameter NUM_INPUTS bound to: 288 - type: integer 
+	Parameter ADDER_LAYERS bound to: 9 - type: integer 
+	Parameter OUTPUT_DATA_WIDTH bound to: 25 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'mult_8bit_single' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/macc_8bit_single.v:74]
+INFO: [Synth 8-6155] done synthesizing module 'mult_8bit_single' (22#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/macc_8bit_single.v:74]
+INFO: [Synth 8-6157] synthesizing module 'adder_tree__parameterized4' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/adder_tree.v:3]
+	Parameter DATA_WIDTH bound to: 16 - type: integer 
+	Parameter NUM_INPUTS bound to: 288 - type: integer 
+	Parameter ADDER_LAYERS bound to: 9 - type: integer 
+	Parameter OUTPUT_DATA_WIDTH bound to: 25 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'adder_tree__parameterized4' (22#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/adder_tree.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'macc_8bit_single' (23#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/macc_8bit_single.v:3]
+INFO: [Synth 8-6157] synthesizing module 'pe_incha_obuffer__parameterized3' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/pe_incha_obuffer.v:3]
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter NUM_INPUTS bound to: 1 - type: integer 
+	Parameter OUT_CHANNEL bound to: 32 - type: integer 
+	Parameter COUNTER_MAX bound to: 32 - type: integer 
+	Parameter OBUFFER_DEPTH bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'pe_incha_obuffer__parameterized3' (23#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/pe_incha_obuffer.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'pe_incha_single' (24#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/pe_incha_single.v:3]
+INFO: [Synth 8-6157] synthesizing module 'line_buffer__parameterized4' [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/line_buffer.v:3]
+INFO: [Common 17-14] Message 'Synth 8-6157' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter IN_CHANNEL bound to: 32 - type: integer 
+	Parameter IN_WIDTH bound to: 128 - type: integer 
+	Parameter IN_HEIGHT bound to: 64 - type: integer 
+	Parameter KERNEL_0 bound to: 3 - type: integer 
+	Parameter KERNEL_1 bound to: 3 - type: integer 
+	Parameter DILATION_0 bound to: 2 - type: integer 
+	Parameter DILATION_1 bound to: 2 - type: integer 
+	Parameter PADDING_0 bound to: 2 - type: integer 
+	Parameter PADDING_1 bound to: 2 - type: integer 
+	Parameter STRIDE_0 bound to: 1 - type: integer 
+	Parameter STRIDE_1 bound to: 1 - type: integer 
+	Parameter PIXEL_WIDTH bound to: 256 - type: integer 
+	Parameter TOTAL_WIDTH bound to: 132 - type: integer 
+	Parameter WINDOW_0 bound to: 5 - type: integer 
+	Parameter WINDOW_1 bound to: 5 - type: integer 
+	Parameter KERNEL_PTS bound to: 9 - type: integer 
+	Parameter BLANK_PTS bound to: 4 - type: integer 
+	Parameter BLANK_PTS_SAFE bound to: 4 - type: integer 
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter IN_CHANNEL bound to: 32 - type: integer 
+	Parameter IN_WIDTH bound to: 128 - type: integer 
+	Parameter IN_HEIGHT bound to: 64 - type: integer 
+	Parameter KERNEL_0 bound to: 3 - type: integer 
+	Parameter KERNEL_1 bound to: 3 - type: integer 
+	Parameter DILATION_0 bound to: 2 - type: integer 
+	Parameter DILATION_1 bound to: 2 - type: integer 
+	Parameter PADDING_0 bound to: 2 - type: integer 
+	Parameter PADDING_1 bound to: 2 - type: integer 
+	Parameter STRIDE_0 bound to: 1 - type: integer 
+	Parameter STRIDE_1 bound to: 1 - type: integer 
+	Parameter PIXEL_WIDTH bound to: 256 - type: integer 
+	Parameter TOTAL_WIDTH bound to: 132 - type: integer 
+	Parameter WINDOW_0 bound to: 5 - type: integer 
+	Parameter WINDOW_1 bound to: 5 - type: integer 
+	Parameter KERNEL_PTS bound to: 9 - type: integer 
+	Parameter BLANK_PTS bound to: 4 - type: integer 
+	Parameter BLANK_PTS_SAFE bound to: 4 - type: integer 
+	Parameter COL_CNT_WIDTH bound to: 9 - type: integer 
+	Parameter ROW_CNT_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'line_buffer_controller__parameterized4' (24#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/line_buffer_controller.v:3]
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter IN_CHANNEL bound to: 32 - type: integer 
+	Parameter IN_WIDTH bound to: 128 - type: integer 
+	Parameter KERNEL_0 bound to: 3 - type: integer 
+	Parameter KERNEL_1 bound to: 3 - type: integer 
+	Parameter DILATION_0 bound to: 2 - type: integer 
+	Parameter DILATION_1 bound to: 2 - type: integer 
+	Parameter PADDING_0 bound to: 2 - type: integer 
+	Parameter PADDING_1 bound to: 2 - type: integer 
+	Parameter PIXEL_WIDTH bound to: 256 - type: integer 
+	Parameter TOTAL_WIDTH bound to: 132 - type: integer 
+	Parameter WINDOW_0 bound to: 5 - type: integer 
+	Parameter WINDOW_1 bound to: 5 - type: integer 
+	Parameter KERNEL_PTS bound to: 9 - type: integer 
+	Parameter BLANK_PTS bound to: 4 - type: integer 
+	Parameter BLANK_PTS_SAFE bound to: 4 - type: integer 
+	Parameter DATA_WIDTH bound to: 256 - type: integer 
+	Parameter DEPTH bound to: 258 - type: integer 
+	Parameter ALMOST_FULL_THRES bound to: 10 - type: integer 
+	Parameter ADDR_WIDTH bound to: 9 - type: integer 
+	Parameter DEPTH bound to: 258 - type: integer 
+	Parameter ADDR_WIDTH bound to: 9 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'fifo_counter__parameterized7' (24#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/fifo_counter.v:3]
+	Parameter DATA_WIDTH bound to: 256 - type: integer 
+	Parameter DEPTH bound to: 258 - type: integer 
+	Parameter RAM_STYLE bound to: auto - type: string 
+	Parameter OUTPUT_REGISTER bound to: false - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'block_ram_single_port__parameterized10' (24#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/block_ram_single_port.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'fifo_single_read__parameterized10' (24#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/fifo_single_read.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'line_buffer_datapath__parameterized4' (24#1) [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/line_buffer_datapath.v:3]
+INFO: [Common 17-14] Message 'Synth 8-6155' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+	Parameter IN_WIDTH bound to: 128 - type: integer 
+	Parameter IN_HEIGHT bound to: 64 - type: integer 
+	Parameter OUTPUT_MODE bound to: relu - type: string 
+	Parameter UNROLL_MODE bound to: incha - type: string 
+	Parameter COMPUTE_FACTOR bound to: single - type: string 
+	Parameter KERNEL_0 bound to: 3 - type: integer 
+	Parameter KERNEL_1 bound to: 3 - type: integer 
+	Parameter DILATION_0 bound to: 2 - type: integer 
+	Parameter DILATION_1 bound to: 2 - type: integer 
+	Parameter PADDING_0 bound to: 2 - type: integer 
+	Parameter PADDING_1 bound to: 2 - type: integer 
+	Parameter STRIDE_0 bound to: 1 - type: integer 
+	Parameter STRIDE_1 bound to: 1 - type: integer 
+	Parameter IN_CHANNEL bound to: 32 - type: integer 
+	Parameter OUT_CHANNEL bound to: 32 - type: integer 
+	Parameter KERNEL_BASE_ADDR bound to: 17176 - type: integer 
+	Parameter BIAS_BASE_ADDR bound to: 76088 - type: integer 
+	Parameter MACC_COEFF_BASE_ADDR bound to: 76311 - type: integer 
+	Parameter LAYER_SCALE_BASE_ADDR bound to: 76312 - type: integer 
+	Parameter OUTPUT_DATA_WIDTH bound to: 8 - type: integer 
+	Parameter IN_WIDTH bound to: 128 - type: integer 
+	Parameter IN_HEIGHT bound to: 64 - type: integer 
+	Parameter IN_CHANNEL bound to: 32 - type: integer 
+	Parameter OUT_CHANNEL bound to: 32 - type: integer 
+	Parameter OUTPUT_MODE bound to: relu - type: string 
+	Parameter KERNEL_0 bound to: 3 - type: integer 
+	Parameter KERNEL_1 bound to: 3 - type: integer 
+	Parameter DILATION_0 bound to: 2 - type: integer 
+	Parameter DILATION_1 bound to: 2 - type: integer 
+	Parameter PADDING_0 bound to: 2 - type: integer 
+	Parameter PADDING_1 bound to: 2 - type: integer 
+	Parameter STRIDE_0 bound to: 1 - type: integer 
+	Parameter STRIDE_1 bound to: 1 - type: integer 
+	Parameter KERNEL_BASE_ADDR bound to: 17176 - type: integer 
+	Parameter BIAS_BASE_ADDR bound to: 76088 - type: integer 
+	Parameter MACC_COEFF_BASE_ADDR bound to: 76311 - type: integer 
+	Parameter LAYER_SCALE_BASE_ADDR bound to: 76312 - type: integer 
+	Parameter KERNEL_PTS bound to: 9 - type: integer 
+	Parameter OUTPUT_DATA_WIDTH bound to: 8 - type: integer 
+	Parameter NUM_KERNEL_WEIGHTS bound to: 9216 - type: integer 
+	Parameter QUOTIENT_WIDTH bound to: 9 - type: integer 
+	Parameter MACC_OUTPUT_DATA_WIDTH bound to: 25 - type: integer 
+	Parameter IN_WIDTH bound to: 128 - type: integer 
+	Parameter IN_HEIGHT bound to: 64 - type: integer 
+	Parameter OUTPUT_MODE bound to: relu - type: string 
+	Parameter UNROLL_MODE bound to: incha - type: string 
+	Parameter COMPUTE_FACTOR bound to: single - type: string 
+	Parameter KERNEL_0 bound to: 2 - type: integer 
+	Parameter KERNEL_1 bound to: 2 - type: integer 
+	Parameter DILATION_0 bound to: 1 - type: integer 
+	Parameter DILATION_1 bound to: 1 - type: integer 
+	Parameter PADDING_0 bound to: 0 - type: integer 
+	Parameter PADDING_1 bound to: 0 - type: integer 
+	Parameter STRIDE_0 bound to: 2 - type: integer 
+	Parameter STRIDE_1 bound to: 2 - type: integer 
+	Parameter IN_CHANNEL bound to: 32 - type: integer 
+	Parameter OUT_CHANNEL bound to: 64 - type: integer 
+	Parameter KERNEL_BASE_ADDR bound to: 26392 - type: integer 
+	Parameter BIAS_BASE_ADDR bound to: 76120 - type: integer 
+	Parameter MACC_COEFF_BASE_ADDR bound to: 76312 - type: integer 
+	Parameter LAYER_SCALE_BASE_ADDR bound to: 76313 - type: integer 
+	Parameter OUTPUT_DATA_WIDTH bound to: 8 - type: integer 
+	Parameter IN_WIDTH bound to: 128 - type: integer 
+	Parameter IN_HEIGHT bound to: 64 - type: integer 
+	Parameter IN_CHANNEL bound to: 32 - type: integer 
+	Parameter OUT_CHANNEL bound to: 64 - type: integer 
+	Parameter OUTPUT_MODE bound to: relu - type: string 
+	Parameter KERNEL_0 bound to: 2 - type: integer 
+	Parameter KERNEL_1 bound to: 2 - type: integer 
+	Parameter DILATION_0 bound to: 1 - type: integer 
+	Parameter DILATION_1 bound to: 1 - type: integer 
+	Parameter PADDING_0 bound to: 0 - type: integer 
+	Parameter PADDING_1 bound to: 0 - type: integer 
+	Parameter STRIDE_0 bound to: 2 - type: integer 
+	Parameter STRIDE_1 bound to: 2 - type: integer 
+	Parameter KERNEL_BASE_ADDR bound to: 26392 - type: integer 
+	Parameter BIAS_BASE_ADDR bound to: 76120 - type: integer 
+	Parameter MACC_COEFF_BASE_ADDR bound to: 76312 - type: integer 
+	Parameter LAYER_SCALE_BASE_ADDR bound to: 76313 - type: integer 
+	Parameter KERNEL_PTS bound to: 4 - type: integer 
+	Parameter OUTPUT_DATA_WIDTH bound to: 8 - type: integer 
+	Parameter NUM_KERNEL_WEIGHTS bound to: 8192 - type: integer 
+	Parameter QUOTIENT_WIDTH bound to: 7 - type: integer 
+	Parameter MACC_OUTPUT_DATA_WIDTH bound to: 23 - type: integer 
+	Parameter DIVIDEND_WIDTH bound to: 14 - type: integer 
+	Parameter DIVISOR bound to: 128 - type: integer 
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter DEPTH bound to: 64 - type: integer 
+	Parameter NUM_WORDS bound to: 128 - type: integer 
+	Parameter RAM_STYLE bound to: auto - type: string 
+	Parameter OUTPUT_REGISTER bound to: true - type: string 
+	Parameter DATA_WIDTH bound to: 16 - type: integer 
+	Parameter DEPTH bound to: 64 - type: integer 
+	Parameter RAM_STYLE bound to: auto - type: string 
+	Parameter OUTPUT_REGISTER bound to: true - type: string 
+	Parameter NUM_INPUTS bound to: 128 - type: integer 
+	Parameter ADDER_LAYERS bound to: 7 - type: integer 
+	Parameter OUTPUT_DATA_WIDTH bound to: 23 - type: integer 
+	Parameter DATA_WIDTH bound to: 16 - type: integer 
+	Parameter NUM_INPUTS bound to: 128 - type: integer 
+	Parameter ADDER_LAYERS bound to: 7 - type: integer 
+	Parameter OUTPUT_DATA_WIDTH bound to: 23 - type: integer 
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter NUM_INPUTS bound to: 1 - type: integer 
+	Parameter OUT_CHANNEL bound to: 64 - type: integer 
+	Parameter COUNTER_MAX bound to: 64 - type: integer 
+	Parameter OBUFFER_DEPTH bound to: 64 - type: integer 
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter IN_CHANNEL bound to: 32 - type: integer 
+	Parameter IN_WIDTH bound to: 128 - type: integer 
+	Parameter IN_HEIGHT bound to: 64 - type: integer 
+	Parameter KERNEL_0 bound to: 2 - type: integer 
+	Parameter KERNEL_1 bound to: 2 - type: integer 
+	Parameter DILATION_0 bound to: 1 - type: integer 
+	Parameter DILATION_1 bound to: 1 - type: integer 
+	Parameter PADDING_0 bound to: 0 - type: integer 
+	Parameter PADDING_1 bound to: 0 - type: integer 
+	Parameter STRIDE_0 bound to: 2 - type: integer 
+	Parameter STRIDE_1 bound to: 2 - type: integer 
+	Parameter PIXEL_WIDTH bound to: 256 - type: integer 
+	Parameter TOTAL_WIDTH bound to: 128 - type: integer 
+	Parameter WINDOW_0 bound to: 2 - type: integer 
+	Parameter WINDOW_1 bound to: 2 - type: integer 
+	Parameter KERNEL_PTS bound to: 4 - type: integer 
+	Parameter BLANK_PTS bound to: 0 - type: integer 
+	Parameter BLANK_PTS_SAFE bound to: 1 - type: integer 
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter IN_CHANNEL bound to: 32 - type: integer 
+	Parameter IN_WIDTH bound to: 128 - type: integer 
+	Parameter IN_HEIGHT bound to: 64 - type: integer 
+	Parameter KERNEL_0 bound to: 2 - type: integer 
+	Parameter KERNEL_1 bound to: 2 - type: integer 
+	Parameter DILATION_0 bound to: 1 - type: integer 
+	Parameter DILATION_1 bound to: 1 - type: integer 
+	Parameter PADDING_0 bound to: 0 - type: integer 
+	Parameter PADDING_1 bound to: 0 - type: integer 
+	Parameter STRIDE_0 bound to: 2 - type: integer 
+	Parameter STRIDE_1 bound to: 2 - type: integer 
+	Parameter PIXEL_WIDTH bound to: 256 - type: integer 
+	Parameter TOTAL_WIDTH bound to: 128 - type: integer 
+	Parameter WINDOW_0 bound to: 2 - type: integer 
+	Parameter WINDOW_1 bound to: 2 - type: integer 
+	Parameter KERNEL_PTS bound to: 4 - type: integer 
+	Parameter BLANK_PTS bound to: 0 - type: integer 
+	Parameter BLANK_PTS_SAFE bound to: 1 - type: integer 
+	Parameter COL_CNT_WIDTH bound to: 8 - type: integer 
+	Parameter ROW_CNT_WIDTH bound to: 7 - type: integer 
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter IN_CHANNEL bound to: 32 - type: integer 
+	Parameter IN_WIDTH bound to: 128 - type: integer 
+	Parameter KERNEL_0 bound to: 2 - type: integer 
+	Parameter KERNEL_1 bound to: 2 - type: integer 
+	Parameter DILATION_0 bound to: 1 - type: integer 
+	Parameter DILATION_1 bound to: 1 - type: integer 
+	Parameter PADDING_0 bound to: 0 - type: integer 
+	Parameter PADDING_1 bound to: 0 - type: integer 
+	Parameter PIXEL_WIDTH bound to: 256 - type: integer 
+	Parameter TOTAL_WIDTH bound to: 128 - type: integer 
+	Parameter WINDOW_0 bound to: 2 - type: integer 
+	Parameter WINDOW_1 bound to: 2 - type: integer 
+	Parameter KERNEL_PTS bound to: 4 - type: integer 
+	Parameter BLANK_PTS bound to: 0 - type: integer 
+	Parameter BLANK_PTS_SAFE bound to: 1 - type: integer 
+	Parameter DATA_WIDTH bound to: 256 - type: integer 
+	Parameter DEPTH bound to: 125 - type: integer 
+	Parameter ALMOST_FULL_THRES bound to: 10 - type: integer 
+	Parameter ADDR_WIDTH bound to: 7 - type: integer 
+	Parameter DEPTH bound to: 125 - type: integer 
+	Parameter ADDR_WIDTH bound to: 7 - type: integer 
+	Parameter DATA_WIDTH bound to: 256 - type: integer 
+	Parameter DEPTH bound to: 125 - type: integer 
+	Parameter RAM_STYLE bound to: auto - type: string 
+	Parameter OUTPUT_REGISTER bound to: false - type: string 
+	Parameter DATA_WIDTH bound to: 512 - type: integer 
+	Parameter DEPTH bound to: 64 - type: integer 
+	Parameter ALMOST_FULL_THRES bound to: 10 - type: integer 
+	Parameter ADDR_WIDTH bound to: 6 - type: integer 
+	Parameter DEPTH bound to: 64 - type: integer 
+	Parameter ADDR_WIDTH bound to: 6 - type: integer 
+	Parameter DATA_WIDTH bound to: 512 - type: integer 
+	Parameter DEPTH bound to: 64 - type: integer 
+	Parameter RAM_STYLE bound to: auto - type: string 
+	Parameter OUTPUT_REGISTER bound to: false - type: string 
+	Parameter IN_WIDTH bound to: 64 - type: integer 
+	Parameter IN_HEIGHT bound to: 32 - type: integer 
+	Parameter OUTPUT_MODE bound to: relu - type: string 
+	Parameter UNROLL_MODE bound to: outcha - type: string 
+	Parameter COMPUTE_FACTOR bound to: single - type: string 
+	Parameter KERNEL_0 bound to: 3 - type: integer 
+	Parameter KERNEL_1 bound to: 3 - type: integer 
+	Parameter DILATION_0 bound to: 1 - type: integer 
+	Parameter DILATION_1 bound to: 1 - type: integer 
+	Parameter PADDING_0 bound to: 1 - type: integer 
+	Parameter PADDING_1 bound to: 1 - type: integer 
+	Parameter STRIDE_0 bound to: 1 - type: integer 
+	Parameter STRIDE_1 bound to: 1 - type: integer 
+	Parameter IN_CHANNEL bound to: 64 - type: integer 
+	Parameter OUT_CHANNEL bound to: 32 - type: integer 
+	Parameter KERNEL_BASE_ADDR bound to: 34584 - type: integer 
+	Parameter BIAS_BASE_ADDR bound to: 76184 - type: integer 
+	Parameter MACC_COEFF_BASE_ADDR bound to: 76313 - type: integer 
+	Parameter LAYER_SCALE_BASE_ADDR bound to: 76314 - type: integer 
+	Parameter OUTPUT_DATA_WIDTH bound to: 8 - type: integer 
+	Parameter IN_WIDTH bound to: 64 - type: integer 
+	Parameter IN_HEIGHT bound to: 32 - type: integer 
+	Parameter IN_CHANNEL bound to: 64 - type: integer 
+	Parameter OUT_CHANNEL bound to: 32 - type: integer 
+	Parameter OUTPUT_MODE bound to: relu - type: string 
+	Parameter KERNEL_0 bound to: 3 - type: integer 
+	Parameter KERNEL_1 bound to: 3 - type: integer 
+	Parameter DILATION_0 bound to: 1 - type: integer 
+	Parameter DILATION_1 bound to: 1 - type: integer 
+	Parameter PADDING_0 bound to: 1 - type: integer 
+	Parameter PADDING_1 bound to: 1 - type: integer 
+	Parameter STRIDE_0 bound to: 1 - type: integer 
+	Parameter STRIDE_1 bound to: 1 - type: integer 
+	Parameter KERNEL_BASE_ADDR bound to: 34584 - type: integer 
+	Parameter BIAS_BASE_ADDR bound to: 76184 - type: integer 
+	Parameter MACC_COEFF_BASE_ADDR bound to: 76313 - type: integer 
+	Parameter LAYER_SCALE_BASE_ADDR bound to: 76314 - type: integer 
+	Parameter KERNEL_PTS bound to: 9 - type: integer 
+	Parameter OUTPUT_DATA_WIDTH bound to: 8 - type: integer 
+	Parameter NUM_KERNEL_WEIGHTS bound to: 18432 - type: integer 
+	Parameter QUOTIENT_WIDTH bound to: 9 - type: integer 
+	Parameter MACC_OUTPUT_DATA_WIDTH bound to: 20 - type: integer 
+	Parameter DIVIDEND_WIDTH bound to: 18 - type: integer 
+	Parameter DIVISOR bound to: 64 - type: integer 
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter DEPTH bound to: 64 - type: integer 
+	Parameter NUM_WORDS bound to: 288 - type: integer 
+	Parameter RAM_STYLE bound to: auto - type: string 
+	Parameter OUTPUT_REGISTER bound to: true - type: string 
+	Parameter NUM_INPUTS bound to: 9 - type: integer 
+	Parameter NUM_MACC bound to: 32 - type: integer 
+	Parameter ADDER_LAYERS bound to: 4 - type: integer 
+	Parameter OUTPUT_DATA_WIDTH bound to: 20 - type: integer 
+	Parameter DATA_WIDTH bound to: 16 - type: integer 
+	Parameter NUM_INPUTS bound to: 9 - type: integer 
+	Parameter ADDER_LAYERS bound to: 4 - type: integer 
+	Parameter OUTPUT_DATA_WIDTH bound to: 20 - type: integer 
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter IN_CHANNEL bound to: 64 - type: integer 
+	Parameter IN_WIDTH bound to: 64 - type: integer 
+	Parameter IN_HEIGHT bound to: 32 - type: integer 
+	Parameter KERNEL_0 bound to: 3 - type: integer 
+	Parameter KERNEL_1 bound to: 3 - type: integer 
+	Parameter DILATION_0 bound to: 1 - type: integer 
+	Parameter DILATION_1 bound to: 1 - type: integer 
+	Parameter PADDING_0 bound to: 1 - type: integer 
+	Parameter PADDING_1 bound to: 1 - type: integer 
+	Parameter STRIDE_0 bound to: 1 - type: integer 
+	Parameter STRIDE_1 bound to: 1 - type: integer 
+	Parameter PIXEL_WIDTH bound to: 512 - type: integer 
+	Parameter TOTAL_WIDTH bound to: 66 - type: integer 
+	Parameter WINDOW_0 bound to: 3 - type: integer 
+	Parameter WINDOW_1 bound to: 3 - type: integer 
+	Parameter KERNEL_PTS bound to: 9 - type: integer 
+	Parameter BLANK_PTS bound to: 4 - type: integer 
+	Parameter BLANK_PTS_SAFE bound to: 4 - type: integer 
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter IN_CHANNEL bound to: 64 - type: integer 
+	Parameter IN_WIDTH bound to: 64 - type: integer 
+	Parameter IN_HEIGHT bound to: 32 - type: integer 
+	Parameter KERNEL_0 bound to: 3 - type: integer 
+	Parameter KERNEL_1 bound to: 3 - type: integer 
+	Parameter DILATION_0 bound to: 1 - type: integer 
+	Parameter DILATION_1 bound to: 1 - type: integer 
+	Parameter PADDING_0 bound to: 1 - type: integer 
+	Parameter PADDING_1 bound to: 1 - type: integer 
+	Parameter STRIDE_0 bound to: 1 - type: integer 
+	Parameter STRIDE_1 bound to: 1 - type: integer 
+	Parameter PIXEL_WIDTH bound to: 512 - type: integer 
+	Parameter TOTAL_WIDTH bound to: 66 - type: integer 
+	Parameter WINDOW_0 bound to: 3 - type: integer 
+	Parameter WINDOW_1 bound to: 3 - type: integer 
+	Parameter KERNEL_PTS bound to: 9 - type: integer 
+	Parameter BLANK_PTS bound to: 4 - type: integer 
+	Parameter BLANK_PTS_SAFE bound to: 4 - type: integer 
+	Parameter COL_CNT_WIDTH bound to: 8 - type: integer 
+	Parameter ROW_CNT_WIDTH bound to: 7 - type: integer 
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter IN_CHANNEL bound to: 64 - type: integer 
+	Parameter IN_WIDTH bound to: 64 - type: integer 
+	Parameter KERNEL_0 bound to: 3 - type: integer 
+	Parameter KERNEL_1 bound to: 3 - type: integer 
+	Parameter DILATION_0 bound to: 1 - type: integer 
+	Parameter DILATION_1 bound to: 1 - type: integer 
+	Parameter PADDING_0 bound to: 1 - type: integer 
+	Parameter PADDING_1 bound to: 1 - type: integer 
+	Parameter PIXEL_WIDTH bound to: 512 - type: integer 
+	Parameter TOTAL_WIDTH bound to: 66 - type: integer 
+	Parameter WINDOW_0 bound to: 3 - type: integer 
+	Parameter WINDOW_1 bound to: 3 - type: integer 
+	Parameter KERNEL_PTS bound to: 9 - type: integer 
+	Parameter BLANK_PTS bound to: 4 - type: integer 
+	Parameter BLANK_PTS_SAFE bound to: 4 - type: integer 
+	Parameter DATA_WIDTH bound to: 512 - type: integer 
+	Parameter DEPTH bound to: 62 - type: integer 
+	Parameter ALMOST_FULL_THRES bound to: 10 - type: integer 
+	Parameter ADDR_WIDTH bound to: 6 - type: integer 
+	Parameter DEPTH bound to: 62 - type: integer 
+	Parameter ADDR_WIDTH bound to: 6 - type: integer 
+	Parameter DATA_WIDTH bound to: 512 - type: integer 
+	Parameter DEPTH bound to: 62 - type: integer 
+	Parameter RAM_STYLE bound to: auto - type: string 
+	Parameter OUTPUT_REGISTER bound to: false - type: string 
+	Parameter DATA_WIDTH bound to: 256 - type: integer 
+	Parameter DEPTH bound to: 64 - type: integer 
+	Parameter ALMOST_FULL_THRES bound to: 10 - type: integer 
+	Parameter ADDR_WIDTH bound to: 6 - type: integer 
+	Parameter DATA_WIDTH bound to: 256 - type: integer 
+	Parameter DEPTH bound to: 64 - type: integer 
+	Parameter RAM_STYLE bound to: auto - type: string 
+	Parameter OUTPUT_REGISTER bound to: false - type: string 
+	Parameter IN_WIDTH bound to: 64 - type: integer 
+	Parameter IN_HEIGHT bound to: 32 - type: integer 
+	Parameter OUTPUT_MODE bound to: relu - type: string 
+	Parameter UNROLL_MODE bound to: outcha - type: string 
+	Parameter COMPUTE_FACTOR bound to: single - type: string 
+	Parameter KERNEL_0 bound to: 3 - type: integer 
+	Parameter KERNEL_1 bound to: 3 - type: integer 
+	Parameter DILATION_0 bound to: 1 - type: integer 
+	Parameter DILATION_1 bound to: 1 - type: integer 
+	Parameter PADDING_0 bound to: 1 - type: integer 
+	Parameter PADDING_1 bound to: 1 - type: integer 
+	Parameter STRIDE_0 bound to: 1 - type: integer 
+	Parameter STRIDE_1 bound to: 1 - type: integer 
+	Parameter IN_CHANNEL bound to: 32 - type: integer 
+	Parameter OUT_CHANNEL bound to: 16 - type: integer 
+	Parameter KERNEL_BASE_ADDR bound to: 53016 - type: integer 
+	Parameter BIAS_BASE_ADDR bound to: 76216 - type: integer 
+	Parameter MACC_COEFF_BASE_ADDR bound to: 76314 - type: integer 
+	Parameter LAYER_SCALE_BASE_ADDR bound to: 76315 - type: integer 
+	Parameter OUTPUT_DATA_WIDTH bound to: 8 - type: integer 
+	Parameter IN_WIDTH bound to: 64 - type: integer 
+	Parameter IN_HEIGHT bound to: 32 - type: integer 
+	Parameter IN_CHANNEL bound to: 32 - type: integer 
+	Parameter OUT_CHANNEL bound to: 16 - type: integer 
+	Parameter OUTPUT_MODE bound to: relu - type: string 
+	Parameter KERNEL_0 bound to: 3 - type: integer 
+	Parameter KERNEL_1 bound to: 3 - type: integer 
+	Parameter DILATION_0 bound to: 1 - type: integer 
+	Parameter DILATION_1 bound to: 1 - type: integer 
+	Parameter PADDING_0 bound to: 1 - type: integer 
+	Parameter PADDING_1 bound to: 1 - type: integer 
+	Parameter STRIDE_0 bound to: 1 - type: integer 
+	Parameter STRIDE_1 bound to: 1 - type: integer 
+	Parameter KERNEL_BASE_ADDR bound to: 53016 - type: integer 
+	Parameter BIAS_BASE_ADDR bound to: 76216 - type: integer 
+	Parameter MACC_COEFF_BASE_ADDR bound to: 76314 - type: integer 
+	Parameter LAYER_SCALE_BASE_ADDR bound to: 76315 - type: integer 
+	Parameter KERNEL_PTS bound to: 9 - type: integer 
+	Parameter OUTPUT_DATA_WIDTH bound to: 8 - type: integer 
+	Parameter NUM_KERNEL_WEIGHTS bound to: 4608 - type: integer 
+	Parameter QUOTIENT_WIDTH bound to: 8 - type: integer 
+	Parameter MACC_OUTPUT_DATA_WIDTH bound to: 20 - type: integer 
+	Parameter DIVIDEND_WIDTH bound to: 16 - type: integer 
+	Parameter DIVISOR bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter DEPTH bound to: 32 - type: integer 
+	Parameter NUM_WORDS bound to: 144 - type: integer 
+	Parameter RAM_STYLE bound to: auto - type: string 
+	Parameter OUTPUT_REGISTER bound to: true - type: string 
+	Parameter NUM_INPUTS bound to: 9 - type: integer 
+	Parameter NUM_MACC bound to: 16 - type: integer 
+	Parameter ADDER_LAYERS bound to: 4 - type: integer 
+	Parameter OUTPUT_DATA_WIDTH bound to: 20 - type: integer 
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter IN_CHANNEL bound to: 32 - type: integer 
+	Parameter IN_WIDTH bound to: 64 - type: integer 
+	Parameter IN_HEIGHT bound to: 32 - type: integer 
+	Parameter KERNEL_0 bound to: 3 - type: integer 
+	Parameter KERNEL_1 bound to: 3 - type: integer 
+	Parameter DILATION_0 bound to: 1 - type: integer 
+	Parameter DILATION_1 bound to: 1 - type: integer 
+	Parameter PADDING_0 bound to: 1 - type: integer 
+	Parameter PADDING_1 bound to: 1 - type: integer 
+	Parameter STRIDE_0 bound to: 1 - type: integer 
+	Parameter STRIDE_1 bound to: 1 - type: integer 
+	Parameter PIXEL_WIDTH bound to: 256 - type: integer 
+	Parameter TOTAL_WIDTH bound to: 66 - type: integer 
+	Parameter WINDOW_0 bound to: 3 - type: integer 
+	Parameter WINDOW_1 bound to: 3 - type: integer 
+	Parameter KERNEL_PTS bound to: 9 - type: integer 
+	Parameter BLANK_PTS bound to: 4 - type: integer 
+	Parameter BLANK_PTS_SAFE bound to: 4 - type: integer 
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter IN_CHANNEL bound to: 32 - type: integer 
+	Parameter IN_WIDTH bound to: 64 - type: integer 
+	Parameter IN_HEIGHT bound to: 32 - type: integer 
+	Parameter KERNEL_0 bound to: 3 - type: integer 
+	Parameter KERNEL_1 bound to: 3 - type: integer 
+	Parameter DILATION_0 bound to: 1 - type: integer 
+	Parameter DILATION_1 bound to: 1 - type: integer 
+	Parameter PADDING_0 bound to: 1 - type: integer 
+	Parameter PADDING_1 bound to: 1 - type: integer 
+	Parameter STRIDE_0 bound to: 1 - type: integer 
+	Parameter STRIDE_1 bound to: 1 - type: integer 
+	Parameter PIXEL_WIDTH bound to: 256 - type: integer 
+	Parameter TOTAL_WIDTH bound to: 66 - type: integer 
+	Parameter WINDOW_0 bound to: 3 - type: integer 
+	Parameter WINDOW_1 bound to: 3 - type: integer 
+	Parameter KERNEL_PTS bound to: 9 - type: integer 
+	Parameter BLANK_PTS bound to: 4 - type: integer 
+	Parameter BLANK_PTS_SAFE bound to: 4 - type: integer 
+	Parameter COL_CNT_WIDTH bound to: 8 - type: integer 
+	Parameter ROW_CNT_WIDTH bound to: 7 - type: integer 
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter IN_CHANNEL bound to: 32 - type: integer 
+	Parameter IN_WIDTH bound to: 64 - type: integer 
+	Parameter KERNEL_0 bound to: 3 - type: integer 
+	Parameter KERNEL_1 bound to: 3 - type: integer 
+	Parameter DILATION_0 bound to: 1 - type: integer 
+	Parameter DILATION_1 bound to: 1 - type: integer 
+	Parameter PADDING_0 bound to: 1 - type: integer 
+	Parameter PADDING_1 bound to: 1 - type: integer 
+	Parameter PIXEL_WIDTH bound to: 256 - type: integer 
+	Parameter TOTAL_WIDTH bound to: 66 - type: integer 
+	Parameter WINDOW_0 bound to: 3 - type: integer 
+	Parameter WINDOW_1 bound to: 3 - type: integer 
+	Parameter KERNEL_PTS bound to: 9 - type: integer 
+	Parameter BLANK_PTS bound to: 4 - type: integer 
+	Parameter BLANK_PTS_SAFE bound to: 4 - type: integer 
+	Parameter DATA_WIDTH bound to: 256 - type: integer 
+	Parameter DEPTH bound to: 62 - type: integer 
+	Parameter ALMOST_FULL_THRES bound to: 10 - type: integer 
+	Parameter ADDR_WIDTH bound to: 6 - type: integer 
+	Parameter DATA_WIDTH bound to: 256 - type: integer 
+	Parameter DEPTH bound to: 62 - type: integer 
+	Parameter RAM_STYLE bound to: auto - type: string 
+	Parameter OUTPUT_REGISTER bound to: false - type: string 
+	Parameter DATA_WIDTH bound to: 128 - type: integer 
+	Parameter DEPTH bound to: 64 - type: integer 
+	Parameter ALMOST_FULL_THRES bound to: 10 - type: integer 
+	Parameter ADDR_WIDTH bound to: 6 - type: integer 
+	Parameter DATA_WIDTH bound to: 128 - type: integer 
+	Parameter DEPTH bound to: 64 - type: integer 
+	Parameter RAM_STYLE bound to: auto - type: string 
+	Parameter OUTPUT_REGISTER bound to: false - type: string 
+	Parameter IN_WIDTH bound to: 64 - type: integer 
+	Parameter IN_HEIGHT bound to: 32 - type: integer 
+	Parameter OUTPUT_MODE bound to: relu - type: string 
+	Parameter UNROLL_MODE bound to: outcha - type: string 
+	Parameter COMPUTE_FACTOR bound to: single - type: string 
+	Parameter KERNEL_0 bound to: 3 - type: integer 
+	Parameter KERNEL_1 bound to: 3 - type: integer 
+	Parameter DILATION_0 bound to: 1 - type: integer 
+	Parameter DILATION_1 bound to: 1 - type: integer 
+	Parameter PADDING_0 bound to: 1 - type: integer 
+	Parameter PADDING_1 bound to: 1 - type: integer 
+	Parameter STRIDE_0 bound to: 1 - type: integer 
+	Parameter STRIDE_1 bound to: 1 - type: integer 
+	Parameter IN_CHANNEL bound to: 16 - type: integer 
+	Parameter OUT_CHANNEL bound to: 8 - type: integer 
+	Parameter KERNEL_BASE_ADDR bound to: 57624 - type: integer 
+	Parameter BIAS_BASE_ADDR bound to: 76232 - type: integer 
+	Parameter MACC_COEFF_BASE_ADDR bound to: 76315 - type: integer 
+	Parameter LAYER_SCALE_BASE_ADDR bound to: 76316 - type: integer 
+	Parameter OUTPUT_DATA_WIDTH bound to: 8 - type: integer 
+	Parameter IN_WIDTH bound to: 64 - type: integer 
+	Parameter IN_HEIGHT bound to: 32 - type: integer 
+	Parameter IN_CHANNEL bound to: 16 - type: integer 
+	Parameter OUT_CHANNEL bound to: 8 - type: integer 
+	Parameter OUTPUT_MODE bound to: relu - type: string 
+	Parameter KERNEL_0 bound to: 3 - type: integer 
+	Parameter KERNEL_1 bound to: 3 - type: integer 
+	Parameter DILATION_0 bound to: 1 - type: integer 
+	Parameter DILATION_1 bound to: 1 - type: integer 
+	Parameter PADDING_0 bound to: 1 - type: integer 
+	Parameter PADDING_1 bound to: 1 - type: integer 
+	Parameter STRIDE_0 bound to: 1 - type: integer 
+	Parameter STRIDE_1 bound to: 1 - type: integer 
+	Parameter KERNEL_BASE_ADDR bound to: 57624 - type: integer 
+	Parameter BIAS_BASE_ADDR bound to: 76232 - type: integer 
+	Parameter MACC_COEFF_BASE_ADDR bound to: 76315 - type: integer 
+	Parameter LAYER_SCALE_BASE_ADDR bound to: 76316 - type: integer 
+	Parameter KERNEL_PTS bound to: 9 - type: integer 
+	Parameter OUTPUT_DATA_WIDTH bound to: 8 - type: integer 
+	Parameter NUM_KERNEL_WEIGHTS bound to: 1152 - type: integer 
+	Parameter QUOTIENT_WIDTH bound to: 7 - type: integer 
+	Parameter MACC_OUTPUT_DATA_WIDTH bound to: 20 - type: integer 
+	Parameter DIVIDEND_WIDTH bound to: 14 - type: integer 
+	Parameter DIVISOR bound to: 16 - type: integer 
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter DEPTH bound to: 16 - type: integer 
+	Parameter NUM_WORDS bound to: 72 - type: integer 
+	Parameter RAM_STYLE bound to: auto - type: string 
+	Parameter OUTPUT_REGISTER bound to: true - type: string 
+	Parameter NUM_INPUTS bound to: 9 - type: integer 
+	Parameter NUM_MACC bound to: 8 - type: integer 
+	Parameter ADDER_LAYERS bound to: 4 - type: integer 
+	Parameter OUTPUT_DATA_WIDTH bound to: 20 - type: integer 
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter IN_CHANNEL bound to: 16 - type: integer 
+	Parameter IN_WIDTH bound to: 64 - type: integer 
+	Parameter IN_HEIGHT bound to: 32 - type: integer 
+	Parameter KERNEL_0 bound to: 3 - type: integer 
+	Parameter KERNEL_1 bound to: 3 - type: integer 
+	Parameter DILATION_0 bound to: 1 - type: integer 
+	Parameter DILATION_1 bound to: 1 - type: integer 
+	Parameter PADDING_0 bound to: 1 - type: integer 
+	Parameter PADDING_1 bound to: 1 - type: integer 
+	Parameter STRIDE_0 bound to: 1 - type: integer 
+	Parameter STRIDE_1 bound to: 1 - type: integer 
+	Parameter PIXEL_WIDTH bound to: 128 - type: integer 
+	Parameter TOTAL_WIDTH bound to: 66 - type: integer 
+	Parameter WINDOW_0 bound to: 3 - type: integer 
+	Parameter WINDOW_1 bound to: 3 - type: integer 
+	Parameter KERNEL_PTS bound to: 9 - type: integer 
+	Parameter BLANK_PTS bound to: 4 - type: integer 
+	Parameter BLANK_PTS_SAFE bound to: 4 - type: integer 
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter IN_CHANNEL bound to: 16 - type: integer 
+	Parameter IN_WIDTH bound to: 64 - type: integer 
+	Parameter IN_HEIGHT bound to: 32 - type: integer 
+	Parameter KERNEL_0 bound to: 3 - type: integer 
+	Parameter KERNEL_1 bound to: 3 - type: integer 
+	Parameter DILATION_0 bound to: 1 - type: integer 
+	Parameter DILATION_1 bound to: 1 - type: integer 
+	Parameter PADDING_0 bound to: 1 - type: integer 
+	Parameter PADDING_1 bound to: 1 - type: integer 
+	Parameter STRIDE_0 bound to: 1 - type: integer 
+	Parameter STRIDE_1 bound to: 1 - type: integer 
+	Parameter PIXEL_WIDTH bound to: 128 - type: integer 
+	Parameter TOTAL_WIDTH bound to: 66 - type: integer 
+	Parameter WINDOW_0 bound to: 3 - type: integer 
+	Parameter WINDOW_1 bound to: 3 - type: integer 
+	Parameter KERNEL_PTS bound to: 9 - type: integer 
+	Parameter BLANK_PTS bound to: 4 - type: integer 
+	Parameter BLANK_PTS_SAFE bound to: 4 - type: integer 
+	Parameter COL_CNT_WIDTH bound to: 8 - type: integer 
+	Parameter ROW_CNT_WIDTH bound to: 7 - type: integer 
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter IN_CHANNEL bound to: 16 - type: integer 
+	Parameter IN_WIDTH bound to: 64 - type: integer 
+	Parameter KERNEL_0 bound to: 3 - type: integer 
+	Parameter KERNEL_1 bound to: 3 - type: integer 
+	Parameter DILATION_0 bound to: 1 - type: integer 
+	Parameter DILATION_1 bound to: 1 - type: integer 
+	Parameter PADDING_0 bound to: 1 - type: integer 
+	Parameter PADDING_1 bound to: 1 - type: integer 
+	Parameter PIXEL_WIDTH bound to: 128 - type: integer 
+	Parameter TOTAL_WIDTH bound to: 66 - type: integer 
+	Parameter WINDOW_0 bound to: 3 - type: integer 
+	Parameter WINDOW_1 bound to: 3 - type: integer 
+	Parameter KERNEL_PTS bound to: 9 - type: integer 
+	Parameter BLANK_PTS bound to: 4 - type: integer 
+	Parameter BLANK_PTS_SAFE bound to: 4 - type: integer 
+	Parameter DATA_WIDTH bound to: 128 - type: integer 
+	Parameter DEPTH bound to: 62 - type: integer 
+	Parameter ALMOST_FULL_THRES bound to: 10 - type: integer 
+	Parameter ADDR_WIDTH bound to: 6 - type: integer 
+	Parameter DATA_WIDTH bound to: 128 - type: integer 
+	Parameter DEPTH bound to: 62 - type: integer 
+	Parameter RAM_STYLE bound to: auto - type: string 
+	Parameter OUTPUT_REGISTER bound to: false - type: string 
+	Parameter DATA_WIDTH bound to: 64 - type: integer 
+	Parameter DEPTH bound to: 64 - type: integer 
+	Parameter ALMOST_FULL_THRES bound to: 10 - type: integer 
+	Parameter ADDR_WIDTH bound to: 6 - type: integer 
+	Parameter DATA_WIDTH bound to: 64 - type: integer 
+	Parameter DEPTH bound to: 64 - type: integer 
+	Parameter RAM_STYLE bound to: auto - type: string 
+	Parameter OUTPUT_REGISTER bound to: false - type: string 
+	Parameter IN_WIDTH bound to: 64 - type: integer 
+	Parameter IN_HEIGHT bound to: 32 - type: integer 
+	Parameter OUTPUT_MODE bound to: dequant - type: string 
+	Parameter UNROLL_MODE bound to: outcha - type: string 
+	Parameter COMPUTE_FACTOR bound to: single - type: string 
+	Parameter KERNEL_0 bound to: 3 - type: integer 
+	Parameter KERNEL_1 bound to: 3 - type: integer 
+	Parameter DILATION_0 bound to: 1 - type: integer 
+	Parameter DILATION_1 bound to: 1 - type: integer 
+	Parameter PADDING_0 bound to: 1 - type: integer 
+	Parameter PADDING_1 bound to: 1 - type: integer 
+	Parameter STRIDE_0 bound to: 1 - type: integer 
+	Parameter STRIDE_1 bound to: 1 - type: integer 
+	Parameter IN_CHANNEL bound to: 8 - type: integer 
+	Parameter OUT_CHANNEL bound to: 4 - type: integer 
+	Parameter KERNEL_BASE_ADDR bound to: 58776 - type: integer 
+	Parameter BIAS_BASE_ADDR bound to: 76240 - type: integer 
+	Parameter MACC_COEFF_BASE_ADDR bound to: 76316 - type: integer 
+	Parameter LAYER_SCALE_BASE_ADDR bound to: 76321 - type: integer 
+	Parameter OUTPUT_DATA_WIDTH bound to: 16 - type: integer 
+	Parameter IN_WIDTH bound to: 64 - type: integer 
+	Parameter IN_HEIGHT bound to: 32 - type: integer 
+	Parameter IN_CHANNEL bound to: 8 - type: integer 
+	Parameter OUT_CHANNEL bound to: 4 - type: integer 
+	Parameter OUTPUT_MODE bound to: dequant - type: string 
+	Parameter KERNEL_0 bound to: 3 - type: integer 
+	Parameter KERNEL_1 bound to: 3 - type: integer 
+	Parameter DILATION_0 bound to: 1 - type: integer 
+	Parameter DILATION_1 bound to: 1 - type: integer 
+	Parameter PADDING_0 bound to: 1 - type: integer 
+	Parameter PADDING_1 bound to: 1 - type: integer 
+	Parameter STRIDE_0 bound to: 1 - type: integer 
+	Parameter STRIDE_1 bound to: 1 - type: integer 
+	Parameter KERNEL_BASE_ADDR bound to: 58776 - type: integer 
+	Parameter BIAS_BASE_ADDR bound to: 76240 - type: integer 
+	Parameter MACC_COEFF_BASE_ADDR bound to: 76316 - type: integer 
+	Parameter LAYER_SCALE_BASE_ADDR bound to: 76321 - type: integer 
+	Parameter KERNEL_PTS bound to: 9 - type: integer 
+	Parameter OUTPUT_DATA_WIDTH bound to: 16 - type: integer 
+	Parameter NUM_KERNEL_WEIGHTS bound to: 288 - type: integer 
+	Parameter QUOTIENT_WIDTH bound to: 6 - type: integer 
+	Parameter MACC_OUTPUT_DATA_WIDTH bound to: 20 - type: integer 
+	Parameter DIVIDEND_WIDTH bound to: 12 - type: integer 
+	Parameter DIVISOR bound to: 8 - type: integer 
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter DEPTH bound to: 8 - type: integer 
+	Parameter NUM_WORDS bound to: 36 - type: integer 
+	Parameter RAM_STYLE bound to: auto - type: string 
+	Parameter OUTPUT_REGISTER bound to: true - type: string 
+	Parameter NUM_INPUTS bound to: 9 - type: integer 
+	Parameter NUM_MACC bound to: 4 - type: integer 
+	Parameter ADDER_LAYERS bound to: 4 - type: integer 
+	Parameter OUTPUT_DATA_WIDTH bound to: 20 - type: integer 
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter IN_CHANNEL bound to: 8 - type: integer 
+	Parameter IN_WIDTH bound to: 64 - type: integer 
+	Parameter IN_HEIGHT bound to: 32 - type: integer 
+	Parameter KERNEL_0 bound to: 3 - type: integer 
+	Parameter KERNEL_1 bound to: 3 - type: integer 
+	Parameter DILATION_0 bound to: 1 - type: integer 
+	Parameter DILATION_1 bound to: 1 - type: integer 
+	Parameter PADDING_0 bound to: 1 - type: integer 
+	Parameter PADDING_1 bound to: 1 - type: integer 
+	Parameter STRIDE_0 bound to: 1 - type: integer 
+	Parameter STRIDE_1 bound to: 1 - type: integer 
+	Parameter PIXEL_WIDTH bound to: 64 - type: integer 
+	Parameter TOTAL_WIDTH bound to: 66 - type: integer 
+	Parameter WINDOW_0 bound to: 3 - type: integer 
+	Parameter WINDOW_1 bound to: 3 - type: integer 
+	Parameter KERNEL_PTS bound to: 9 - type: integer 
+	Parameter BLANK_PTS bound to: 4 - type: integer 
+	Parameter BLANK_PTS_SAFE bound to: 4 - type: integer 
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter IN_CHANNEL bound to: 8 - type: integer 
+	Parameter IN_WIDTH bound to: 64 - type: integer 
+	Parameter IN_HEIGHT bound to: 32 - type: integer 
+	Parameter KERNEL_0 bound to: 3 - type: integer 
+	Parameter KERNEL_1 bound to: 3 - type: integer 
+	Parameter DILATION_0 bound to: 1 - type: integer 
+	Parameter DILATION_1 bound to: 1 - type: integer 
+	Parameter PADDING_0 bound to: 1 - type: integer 
+	Parameter PADDING_1 bound to: 1 - type: integer 
+	Parameter STRIDE_0 bound to: 1 - type: integer 
+	Parameter STRIDE_1 bound to: 1 - type: integer 
+	Parameter PIXEL_WIDTH bound to: 64 - type: integer 
+	Parameter TOTAL_WIDTH bound to: 66 - type: integer 
+	Parameter WINDOW_0 bound to: 3 - type: integer 
+	Parameter WINDOW_1 bound to: 3 - type: integer 
+	Parameter KERNEL_PTS bound to: 9 - type: integer 
+	Parameter BLANK_PTS bound to: 4 - type: integer 
+	Parameter BLANK_PTS_SAFE bound to: 4 - type: integer 
+	Parameter COL_CNT_WIDTH bound to: 8 - type: integer 
+	Parameter ROW_CNT_WIDTH bound to: 7 - type: integer 
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter IN_CHANNEL bound to: 8 - type: integer 
+	Parameter IN_WIDTH bound to: 64 - type: integer 
+	Parameter KERNEL_0 bound to: 3 - type: integer 
+	Parameter KERNEL_1 bound to: 3 - type: integer 
+	Parameter DILATION_0 bound to: 1 - type: integer 
+	Parameter DILATION_1 bound to: 1 - type: integer 
+	Parameter PADDING_0 bound to: 1 - type: integer 
+	Parameter PADDING_1 bound to: 1 - type: integer 
+	Parameter PIXEL_WIDTH bound to: 64 - type: integer 
+	Parameter TOTAL_WIDTH bound to: 66 - type: integer 
+	Parameter WINDOW_0 bound to: 3 - type: integer 
+	Parameter WINDOW_1 bound to: 3 - type: integer 
+	Parameter KERNEL_PTS bound to: 9 - type: integer 
+	Parameter BLANK_PTS bound to: 4 - type: integer 
+	Parameter BLANK_PTS_SAFE bound to: 4 - type: integer 
+	Parameter DATA_WIDTH bound to: 64 - type: integer 
+	Parameter DEPTH bound to: 62 - type: integer 
+	Parameter ALMOST_FULL_THRES bound to: 10 - type: integer 
+	Parameter ADDR_WIDTH bound to: 6 - type: integer 
+	Parameter DATA_WIDTH bound to: 64 - type: integer 
+	Parameter DEPTH bound to: 62 - type: integer 
+	Parameter RAM_STYLE bound to: auto - type: string 
+	Parameter OUTPUT_REGISTER bound to: false - type: string 
+	Parameter IN_WIDTH bound to: 64 - type: integer 
+	Parameter IN_HEIGHT bound to: 32 - type: integer 
+	Parameter OUTPUT_MODE bound to: relu - type: string 
+	Parameter UNROLL_MODE bound to: outcha - type: string 
+	Parameter COMPUTE_FACTOR bound to: single - type: string 
+	Parameter KERNEL_0 bound to: 3 - type: integer 
+	Parameter KERNEL_1 bound to: 2 - type: integer 
+	Parameter DILATION_0 bound to: 1 - type: integer 
+	Parameter DILATION_1 bound to: 1 - type: integer 
+	Parameter PADDING_0 bound to: 1 - type: integer 
+	Parameter PADDING_1 bound to: 0 - type: integer 
+	Parameter STRIDE_0 bound to: 1 - type: integer 
+	Parameter STRIDE_1 bound to: 2 - type: integer 
+	Parameter IN_CHANNEL bound to: 64 - type: integer 
+	Parameter OUT_CHANNEL bound to: 32 - type: integer 
+	Parameter KERNEL_BASE_ADDR bound to: 59064 - type: integer 
+	Parameter BIAS_BASE_ADDR bound to: 76244 - type: integer 
+	Parameter MACC_COEFF_BASE_ADDR bound to: 76317 - type: integer 
+	Parameter LAYER_SCALE_BASE_ADDR bound to: 76318 - type: integer 
+	Parameter OUTPUT_DATA_WIDTH bound to: 8 - type: integer 
+	Parameter IN_WIDTH bound to: 64 - type: integer 
+	Parameter IN_HEIGHT bound to: 32 - type: integer 
+	Parameter IN_CHANNEL bound to: 64 - type: integer 
+	Parameter OUT_CHANNEL bound to: 32 - type: integer 
+	Parameter OUTPUT_MODE bound to: relu - type: string 
+	Parameter KERNEL_0 bound to: 3 - type: integer 
+	Parameter KERNEL_1 bound to: 2 - type: integer 
+	Parameter DILATION_0 bound to: 1 - type: integer 
+	Parameter DILATION_1 bound to: 1 - type: integer 
+	Parameter PADDING_0 bound to: 1 - type: integer 
+	Parameter PADDING_1 bound to: 0 - type: integer 
+	Parameter STRIDE_0 bound to: 1 - type: integer 
+	Parameter STRIDE_1 bound to: 2 - type: integer 
+	Parameter KERNEL_BASE_ADDR bound to: 59064 - type: integer 
+	Parameter BIAS_BASE_ADDR bound to: 76244 - type: integer 
+	Parameter MACC_COEFF_BASE_ADDR bound to: 76317 - type: integer 
+	Parameter LAYER_SCALE_BASE_ADDR bound to: 76318 - type: integer 
+	Parameter KERNEL_PTS bound to: 6 - type: integer 
+	Parameter OUTPUT_DATA_WIDTH bound to: 8 - type: integer 
+	Parameter NUM_KERNEL_WEIGHTS bound to: 12288 - type: integer 
+	Parameter QUOTIENT_WIDTH bound to: 8 - type: integer 
+	Parameter MACC_OUTPUT_DATA_WIDTH bound to: 19 - type: integer 
+	Parameter DIVIDEND_WIDTH bound to: 16 - type: integer 
+	Parameter DIVISOR bound to: 64 - type: integer 
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter DEPTH bound to: 64 - type: integer 
+	Parameter NUM_WORDS bound to: 192 - type: integer 
+	Parameter RAM_STYLE bound to: auto - type: string 
+	Parameter OUTPUT_REGISTER bound to: true - type: string 
+	Parameter NUM_INPUTS bound to: 6 - type: integer 
+	Parameter NUM_MACC bound to: 32 - type: integer 
+	Parameter ADDER_LAYERS bound to: 3 - type: integer 
+	Parameter OUTPUT_DATA_WIDTH bound to: 19 - type: integer 
+	Parameter DATA_WIDTH bound to: 16 - type: integer 
+	Parameter NUM_INPUTS bound to: 6 - type: integer 
+	Parameter ADDER_LAYERS bound to: 3 - type: integer 
+	Parameter OUTPUT_DATA_WIDTH bound to: 19 - type: integer 
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter IN_CHANNEL bound to: 64 - type: integer 
+	Parameter IN_WIDTH bound to: 64 - type: integer 
+	Parameter IN_HEIGHT bound to: 32 - type: integer 
+	Parameter KERNEL_0 bound to: 3 - type: integer 
+	Parameter KERNEL_1 bound to: 2 - type: integer 
+	Parameter DILATION_0 bound to: 1 - type: integer 
+	Parameter DILATION_1 bound to: 1 - type: integer 
+	Parameter PADDING_0 bound to: 1 - type: integer 
+	Parameter PADDING_1 bound to: 0 - type: integer 
+	Parameter STRIDE_0 bound to: 1 - type: integer 
+	Parameter STRIDE_1 bound to: 2 - type: integer 
+	Parameter PIXEL_WIDTH bound to: 512 - type: integer 
+	Parameter TOTAL_WIDTH bound to: 64 - type: integer 
+	Parameter WINDOW_0 bound to: 3 - type: integer 
+	Parameter WINDOW_1 bound to: 2 - type: integer 
+	Parameter KERNEL_PTS bound to: 6 - type: integer 
+	Parameter BLANK_PTS bound to: 2 - type: integer 
+	Parameter BLANK_PTS_SAFE bound to: 2 - type: integer 
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter IN_CHANNEL bound to: 64 - type: integer 
+	Parameter IN_WIDTH bound to: 64 - type: integer 
+	Parameter IN_HEIGHT bound to: 32 - type: integer 
+	Parameter KERNEL_0 bound to: 3 - type: integer 
+	Parameter KERNEL_1 bound to: 2 - type: integer 
+	Parameter DILATION_0 bound to: 1 - type: integer 
+	Parameter DILATION_1 bound to: 1 - type: integer 
+	Parameter PADDING_0 bound to: 1 - type: integer 
+	Parameter PADDING_1 bound to: 0 - type: integer 
+	Parameter STRIDE_0 bound to: 1 - type: integer 
+	Parameter STRIDE_1 bound to: 2 - type: integer 
+	Parameter PIXEL_WIDTH bound to: 512 - type: integer 
+	Parameter TOTAL_WIDTH bound to: 64 - type: integer 
+	Parameter WINDOW_0 bound to: 3 - type: integer 
+	Parameter WINDOW_1 bound to: 2 - type: integer 
+	Parameter KERNEL_PTS bound to: 6 - type: integer 
+	Parameter BLANK_PTS bound to: 2 - type: integer 
+	Parameter BLANK_PTS_SAFE bound to: 2 - type: integer 
+	Parameter COL_CNT_WIDTH bound to: 7 - type: integer 
+	Parameter ROW_CNT_WIDTH bound to: 7 - type: integer 
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter IN_CHANNEL bound to: 64 - type: integer 
+	Parameter IN_WIDTH bound to: 64 - type: integer 
+	Parameter KERNEL_0 bound to: 3 - type: integer 
+	Parameter KERNEL_1 bound to: 2 - type: integer 
+	Parameter DILATION_0 bound to: 1 - type: integer 
+	Parameter DILATION_1 bound to: 1 - type: integer 
+	Parameter PADDING_0 bound to: 1 - type: integer 
+	Parameter PADDING_1 bound to: 0 - type: integer 
+	Parameter PIXEL_WIDTH bound to: 512 - type: integer 
+	Parameter TOTAL_WIDTH bound to: 64 - type: integer 
+	Parameter WINDOW_0 bound to: 3 - type: integer 
+	Parameter WINDOW_1 bound to: 2 - type: integer 
+	Parameter KERNEL_PTS bound to: 6 - type: integer 
+	Parameter BLANK_PTS bound to: 2 - type: integer 
+	Parameter BLANK_PTS_SAFE bound to: 2 - type: integer 
+	Parameter DATA_WIDTH bound to: 512 - type: integer 
+	Parameter DEPTH bound to: 61 - type: integer 
+	Parameter ALMOST_FULL_THRES bound to: 10 - type: integer 
+	Parameter ADDR_WIDTH bound to: 6 - type: integer 
+	Parameter DEPTH bound to: 61 - type: integer 
+	Parameter ADDR_WIDTH bound to: 6 - type: integer 
+	Parameter DATA_WIDTH bound to: 512 - type: integer 
+	Parameter DEPTH bound to: 61 - type: integer 
+	Parameter RAM_STYLE bound to: auto - type: string 
+	Parameter OUTPUT_REGISTER bound to: false - type: string 
+	Parameter IN_WIDTH bound to: 32 - type: integer 
+	Parameter IN_HEIGHT bound to: 32 - type: integer 
+	Parameter OUTPUT_MODE bound to: relu - type: string 
+	Parameter UNROLL_MODE bound to: outcha - type: string 
+	Parameter COMPUTE_FACTOR bound to: single - type: string 
+	Parameter KERNEL_0 bound to: 3 - type: integer 
+	Parameter KERNEL_1 bound to: 2 - type: integer 
+	Parameter DILATION_0 bound to: 1 - type: integer 
+	Parameter DILATION_1 bound to: 1 - type: integer 
+	Parameter PADDING_0 bound to: 1 - type: integer 
+	Parameter PADDING_1 bound to: 0 - type: integer 
+	Parameter STRIDE_0 bound to: 1 - type: integer 
+	Parameter STRIDE_1 bound to: 2 - type: integer 
+	Parameter IN_CHANNEL bound to: 32 - type: integer 
+	Parameter OUT_CHANNEL bound to: 16 - type: integer 
+	Parameter KERNEL_BASE_ADDR bound to: 71352 - type: integer 
+	Parameter BIAS_BASE_ADDR bound to: 76276 - type: integer 
+	Parameter MACC_COEFF_BASE_ADDR bound to: 76318 - type: integer 
+	Parameter LAYER_SCALE_BASE_ADDR bound to: 76319 - type: integer 
+	Parameter OUTPUT_DATA_WIDTH bound to: 8 - type: integer 
+	Parameter IN_WIDTH bound to: 32 - type: integer 
+	Parameter IN_HEIGHT bound to: 32 - type: integer 
+	Parameter IN_CHANNEL bound to: 32 - type: integer 
+	Parameter OUT_CHANNEL bound to: 16 - type: integer 
+	Parameter OUTPUT_MODE bound to: relu - type: string 
+	Parameter KERNEL_0 bound to: 3 - type: integer 
+	Parameter KERNEL_1 bound to: 2 - type: integer 
+	Parameter DILATION_0 bound to: 1 - type: integer 
+	Parameter DILATION_1 bound to: 1 - type: integer 
+	Parameter PADDING_0 bound to: 1 - type: integer 
+	Parameter PADDING_1 bound to: 0 - type: integer 
+	Parameter STRIDE_0 bound to: 1 - type: integer 
+	Parameter STRIDE_1 bound to: 2 - type: integer 
+	Parameter KERNEL_BASE_ADDR bound to: 71352 - type: integer 
+	Parameter BIAS_BASE_ADDR bound to: 76276 - type: integer 
+	Parameter MACC_COEFF_BASE_ADDR bound to: 76318 - type: integer 
+	Parameter LAYER_SCALE_BASE_ADDR bound to: 76319 - type: integer 
+	Parameter KERNEL_PTS bound to: 6 - type: integer 
+	Parameter OUTPUT_DATA_WIDTH bound to: 8 - type: integer 
+	Parameter NUM_KERNEL_WEIGHTS bound to: 3072 - type: integer 
+	Parameter QUOTIENT_WIDTH bound to: 7 - type: integer 
+	Parameter MACC_OUTPUT_DATA_WIDTH bound to: 19 - type: integer 
+	Parameter DIVIDEND_WIDTH bound to: 14 - type: integer 
+	Parameter DIVISOR bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter DEPTH bound to: 32 - type: integer 
+	Parameter NUM_WORDS bound to: 96 - type: integer 
+	Parameter RAM_STYLE bound to: auto - type: string 
+	Parameter OUTPUT_REGISTER bound to: true - type: string 
+	Parameter NUM_INPUTS bound to: 6 - type: integer 
+	Parameter NUM_MACC bound to: 16 - type: integer 
+	Parameter ADDER_LAYERS bound to: 3 - type: integer 
+	Parameter OUTPUT_DATA_WIDTH bound to: 19 - type: integer 
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter IN_CHANNEL bound to: 32 - type: integer 
+	Parameter IN_WIDTH bound to: 32 - type: integer 
+	Parameter IN_HEIGHT bound to: 32 - type: integer 
+	Parameter KERNEL_0 bound to: 3 - type: integer 
+	Parameter KERNEL_1 bound to: 2 - type: integer 
+	Parameter DILATION_0 bound to: 1 - type: integer 
+	Parameter DILATION_1 bound to: 1 - type: integer 
+	Parameter PADDING_0 bound to: 1 - type: integer 
+	Parameter PADDING_1 bound to: 0 - type: integer 
+	Parameter STRIDE_0 bound to: 1 - type: integer 
+	Parameter STRIDE_1 bound to: 2 - type: integer 
+	Parameter PIXEL_WIDTH bound to: 256 - type: integer 
+	Parameter TOTAL_WIDTH bound to: 32 - type: integer 
+	Parameter WINDOW_0 bound to: 3 - type: integer 
+	Parameter WINDOW_1 bound to: 2 - type: integer 
+	Parameter KERNEL_PTS bound to: 6 - type: integer 
+	Parameter BLANK_PTS bound to: 2 - type: integer 
+	Parameter BLANK_PTS_SAFE bound to: 2 - type: integer 
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter IN_CHANNEL bound to: 32 - type: integer 
+	Parameter IN_WIDTH bound to: 32 - type: integer 
+	Parameter IN_HEIGHT bound to: 32 - type: integer 
+	Parameter KERNEL_0 bound to: 3 - type: integer 
+	Parameter KERNEL_1 bound to: 2 - type: integer 
+	Parameter DILATION_0 bound to: 1 - type: integer 
+	Parameter DILATION_1 bound to: 1 - type: integer 
+	Parameter PADDING_0 bound to: 1 - type: integer 
+	Parameter PADDING_1 bound to: 0 - type: integer 
+	Parameter STRIDE_0 bound to: 1 - type: integer 
+	Parameter STRIDE_1 bound to: 2 - type: integer 
+	Parameter PIXEL_WIDTH bound to: 256 - type: integer 
+	Parameter TOTAL_WIDTH bound to: 32 - type: integer 
+	Parameter WINDOW_0 bound to: 3 - type: integer 
+	Parameter WINDOW_1 bound to: 2 - type: integer 
+	Parameter KERNEL_PTS bound to: 6 - type: integer 
+	Parameter BLANK_PTS bound to: 2 - type: integer 
+	Parameter BLANK_PTS_SAFE bound to: 2 - type: integer 
+	Parameter COL_CNT_WIDTH bound to: 6 - type: integer 
+	Parameter ROW_CNT_WIDTH bound to: 7 - type: integer 
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter IN_CHANNEL bound to: 32 - type: integer 
+	Parameter IN_WIDTH bound to: 32 - type: integer 
+	Parameter KERNEL_0 bound to: 3 - type: integer 
+	Parameter KERNEL_1 bound to: 2 - type: integer 
+	Parameter DILATION_0 bound to: 1 - type: integer 
+	Parameter DILATION_1 bound to: 1 - type: integer 
+	Parameter PADDING_0 bound to: 1 - type: integer 
+	Parameter PADDING_1 bound to: 0 - type: integer 
+	Parameter PIXEL_WIDTH bound to: 256 - type: integer 
+	Parameter TOTAL_WIDTH bound to: 32 - type: integer 
+	Parameter WINDOW_0 bound to: 3 - type: integer 
+	Parameter WINDOW_1 bound to: 2 - type: integer 
+	Parameter KERNEL_PTS bound to: 6 - type: integer 
+	Parameter BLANK_PTS bound to: 2 - type: integer 
+	Parameter BLANK_PTS_SAFE bound to: 2 - type: integer 
+	Parameter DATA_WIDTH bound to: 256 - type: integer 
+	Parameter DEPTH bound to: 29 - type: integer 
+	Parameter ALMOST_FULL_THRES bound to: 10 - type: integer 
+	Parameter ADDR_WIDTH bound to: 5 - type: integer 
+	Parameter DEPTH bound to: 29 - type: integer 
+	Parameter ADDR_WIDTH bound to: 5 - type: integer 
+	Parameter DATA_WIDTH bound to: 256 - type: integer 
+	Parameter DEPTH bound to: 29 - type: integer 
+	Parameter RAM_STYLE bound to: auto - type: string 
+	Parameter OUTPUT_REGISTER bound to: false - type: string 
+	Parameter IN_WIDTH bound to: 16 - type: integer 
+	Parameter IN_HEIGHT bound to: 32 - type: integer 
+	Parameter OUTPUT_MODE bound to: relu - type: string 
+	Parameter UNROLL_MODE bound to: outcha - type: string 
+	Parameter COMPUTE_FACTOR bound to: single - type: string 
+	Parameter KERNEL_0 bound to: 3 - type: integer 
+	Parameter KERNEL_1 bound to: 2 - type: integer 
+	Parameter DILATION_0 bound to: 1 - type: integer 
+	Parameter DILATION_1 bound to: 1 - type: integer 
+	Parameter PADDING_0 bound to: 1 - type: integer 
+	Parameter PADDING_1 bound to: 0 - type: integer 
+	Parameter STRIDE_0 bound to: 1 - type: integer 
+	Parameter STRIDE_1 bound to: 2 - type: integer 
+	Parameter IN_CHANNEL bound to: 16 - type: integer 
+	Parameter OUT_CHANNEL bound to: 8 - type: integer 
+	Parameter KERNEL_BASE_ADDR bound to: 74424 - type: integer 
+	Parameter BIAS_BASE_ADDR bound to: 76292 - type: integer 
+	Parameter MACC_COEFF_BASE_ADDR bound to: 76319 - type: integer 
+	Parameter LAYER_SCALE_BASE_ADDR bound to: 76320 - type: integer 
+	Parameter OUTPUT_DATA_WIDTH bound to: 8 - type: integer 
+	Parameter IN_WIDTH bound to: 16 - type: integer 
+	Parameter IN_HEIGHT bound to: 32 - type: integer 
+	Parameter IN_CHANNEL bound to: 16 - type: integer 
+	Parameter OUT_CHANNEL bound to: 8 - type: integer 
+	Parameter OUTPUT_MODE bound to: relu - type: string 
+	Parameter KERNEL_0 bound to: 3 - type: integer 
+	Parameter KERNEL_1 bound to: 2 - type: integer 
+	Parameter DILATION_0 bound to: 1 - type: integer 
+	Parameter DILATION_1 bound to: 1 - type: integer 
+	Parameter PADDING_0 bound to: 1 - type: integer 
+	Parameter PADDING_1 bound to: 0 - type: integer 
+	Parameter STRIDE_0 bound to: 1 - type: integer 
+	Parameter STRIDE_1 bound to: 2 - type: integer 
+	Parameter KERNEL_BASE_ADDR bound to: 74424 - type: integer 
+	Parameter BIAS_BASE_ADDR bound to: 76292 - type: integer 
+	Parameter MACC_COEFF_BASE_ADDR bound to: 76319 - type: integer 
+	Parameter LAYER_SCALE_BASE_ADDR bound to: 76320 - type: integer 
+	Parameter KERNEL_PTS bound to: 6 - type: integer 
+	Parameter OUTPUT_DATA_WIDTH bound to: 8 - type: integer 
+	Parameter NUM_KERNEL_WEIGHTS bound to: 768 - type: integer 
+	Parameter QUOTIENT_WIDTH bound to: 6 - type: integer 
+	Parameter MACC_OUTPUT_DATA_WIDTH bound to: 19 - type: integer 
+	Parameter DIVIDEND_WIDTH bound to: 12 - type: integer 
+	Parameter DIVISOR bound to: 16 - type: integer 
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter DEPTH bound to: 16 - type: integer 
+	Parameter NUM_WORDS bound to: 48 - type: integer 
+	Parameter RAM_STYLE bound to: auto - type: string 
+	Parameter OUTPUT_REGISTER bound to: true - type: string 
+	Parameter NUM_INPUTS bound to: 6 - type: integer 
+	Parameter NUM_MACC bound to: 8 - type: integer 
+	Parameter ADDER_LAYERS bound to: 3 - type: integer 
+	Parameter OUTPUT_DATA_WIDTH bound to: 19 - type: integer 
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter IN_CHANNEL bound to: 16 - type: integer 
+	Parameter IN_WIDTH bound to: 16 - type: integer 
+	Parameter IN_HEIGHT bound to: 32 - type: integer 
+	Parameter KERNEL_0 bound to: 3 - type: integer 
+	Parameter KERNEL_1 bound to: 2 - type: integer 
+	Parameter DILATION_0 bound to: 1 - type: integer 
+	Parameter DILATION_1 bound to: 1 - type: integer 
+	Parameter PADDING_0 bound to: 1 - type: integer 
+	Parameter PADDING_1 bound to: 0 - type: integer 
+	Parameter STRIDE_0 bound to: 1 - type: integer 
+	Parameter STRIDE_1 bound to: 2 - type: integer 
+	Parameter PIXEL_WIDTH bound to: 128 - type: integer 
+	Parameter TOTAL_WIDTH bound to: 16 - type: integer 
+	Parameter WINDOW_0 bound to: 3 - type: integer 
+	Parameter WINDOW_1 bound to: 2 - type: integer 
+	Parameter KERNEL_PTS bound to: 6 - type: integer 
+	Parameter BLANK_PTS bound to: 2 - type: integer 
+	Parameter BLANK_PTS_SAFE bound to: 2 - type: integer 
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter IN_CHANNEL bound to: 16 - type: integer 
+	Parameter IN_WIDTH bound to: 16 - type: integer 
+	Parameter IN_HEIGHT bound to: 32 - type: integer 
+	Parameter KERNEL_0 bound to: 3 - type: integer 
+	Parameter KERNEL_1 bound to: 2 - type: integer 
+	Parameter DILATION_0 bound to: 1 - type: integer 
+	Parameter DILATION_1 bound to: 1 - type: integer 
+	Parameter PADDING_0 bound to: 1 - type: integer 
+	Parameter PADDING_1 bound to: 0 - type: integer 
+	Parameter STRIDE_0 bound to: 1 - type: integer 
+	Parameter STRIDE_1 bound to: 2 - type: integer 
+	Parameter PIXEL_WIDTH bound to: 128 - type: integer 
+	Parameter TOTAL_WIDTH bound to: 16 - type: integer 
+	Parameter WINDOW_0 bound to: 3 - type: integer 
+	Parameter WINDOW_1 bound to: 2 - type: integer 
+	Parameter KERNEL_PTS bound to: 6 - type: integer 
+	Parameter BLANK_PTS bound to: 2 - type: integer 
+	Parameter BLANK_PTS_SAFE bound to: 2 - type: integer 
+	Parameter COL_CNT_WIDTH bound to: 5 - type: integer 
+	Parameter ROW_CNT_WIDTH bound to: 7 - type: integer 
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter IN_CHANNEL bound to: 16 - type: integer 
+	Parameter IN_WIDTH bound to: 16 - type: integer 
+	Parameter KERNEL_0 bound to: 3 - type: integer 
+	Parameter KERNEL_1 bound to: 2 - type: integer 
+	Parameter DILATION_0 bound to: 1 - type: integer 
+	Parameter DILATION_1 bound to: 1 - type: integer 
+	Parameter PADDING_0 bound to: 1 - type: integer 
+	Parameter PADDING_1 bound to: 0 - type: integer 
+	Parameter PIXEL_WIDTH bound to: 128 - type: integer 
+	Parameter TOTAL_WIDTH bound to: 16 - type: integer 
+	Parameter WINDOW_0 bound to: 3 - type: integer 
+	Parameter WINDOW_1 bound to: 2 - type: integer 
+	Parameter KERNEL_PTS bound to: 6 - type: integer 
+	Parameter BLANK_PTS bound to: 2 - type: integer 
+	Parameter BLANK_PTS_SAFE bound to: 2 - type: integer 
+	Parameter DATA_WIDTH bound to: 128 - type: integer 
+	Parameter DEPTH bound to: 13 - type: integer 
+	Parameter ALMOST_FULL_THRES bound to: 10 - type: integer 
+	Parameter ADDR_WIDTH bound to: 4 - type: integer 
+	Parameter DEPTH bound to: 13 - type: integer 
+	Parameter ADDR_WIDTH bound to: 4 - type: integer 
+	Parameter DATA_WIDTH bound to: 128 - type: integer 
+	Parameter DEPTH bound to: 13 - type: integer 
+	Parameter RAM_STYLE bound to: auto - type: string 
+	Parameter OUTPUT_REGISTER bound to: false - type: string 
+	Parameter IN_WIDTH bound to: 8 - type: integer 
+	Parameter IN_HEIGHT bound to: 32 - type: integer 
+	Parameter OUTPUT_MODE bound to: sigmoid - type: string 
+	Parameter UNROLL_MODE bound to: outcha - type: string 
+	Parameter COMPUTE_FACTOR bound to: single - type: string 
+	Parameter KERNEL_0 bound to: 3 - type: integer 
+	Parameter KERNEL_1 bound to: 8 - type: integer 
+	Parameter DILATION_0 bound to: 1 - type: integer 
+	Parameter DILATION_1 bound to: 1 - type: integer 
+	Parameter PADDING_0 bound to: 1 - type: integer 
+	Parameter PADDING_1 bound to: 0 - type: integer 
+	Parameter STRIDE_0 bound to: 1 - type: integer 
+	Parameter STRIDE_1 bound to: 1 - type: integer 
+	Parameter IN_CHANNEL bound to: 8 - type: integer 
+	Parameter OUT_CHANNEL bound to: 4 - type: integer 
+	Parameter KERNEL_BASE_ADDR bound to: 75192 - type: integer 
+	Parameter BIAS_BASE_ADDR bound to: 76300 - type: integer 
+	Parameter MACC_COEFF_BASE_ADDR bound to: 76320 - type: integer 
+	Parameter LAYER_SCALE_BASE_ADDR bound to: 76322 - type: integer 
+	Parameter OUTPUT_DATA_WIDTH bound to: 16 - type: integer 
+	Parameter IN_WIDTH bound to: 8 - type: integer 
+	Parameter IN_HEIGHT bound to: 32 - type: integer 
+	Parameter IN_CHANNEL bound to: 8 - type: integer 
+	Parameter OUT_CHANNEL bound to: 4 - type: integer 
+	Parameter OUTPUT_MODE bound to: sigmoid - type: string 
+	Parameter KERNEL_0 bound to: 3 - type: integer 
+	Parameter KERNEL_1 bound to: 8 - type: integer 
+	Parameter DILATION_0 bound to: 1 - type: integer 
+	Parameter DILATION_1 bound to: 1 - type: integer 
+	Parameter PADDING_0 bound to: 1 - type: integer 
+	Parameter PADDING_1 bound to: 0 - type: integer 
+	Parameter STRIDE_0 bound to: 1 - type: integer 
+	Parameter STRIDE_1 bound to: 1 - type: integer 
+	Parameter KERNEL_BASE_ADDR bound to: 75192 - type: integer 
+	Parameter BIAS_BASE_ADDR bound to: 76300 - type: integer 
+	Parameter MACC_COEFF_BASE_ADDR bound to: 76320 - type: integer 
+	Parameter LAYER_SCALE_BASE_ADDR bound to: 76322 - type: integer 
+	Parameter KERNEL_PTS bound to: 24 - type: integer 
+	Parameter OUTPUT_DATA_WIDTH bound to: 16 - type: integer 
+	Parameter NUM_KERNEL_WEIGHTS bound to: 768 - type: integer 
+	Parameter QUOTIENT_WIDTH bound to: 7 - type: integer 
+	Parameter MACC_OUTPUT_DATA_WIDTH bound to: 21 - type: integer 
+	Parameter DATA_WIDTH bound to: 16 - type: integer 
+	Parameter FRAC_BITS bound to: 8 - type: integer 
+	Parameter INT_BITS bound to: 8 - type: integer 
+	Parameter FOUR bound to: 16'sb0000010000000000 
+	Parameter MINUS_FOUR bound to: 16'sb1111110000000000 
+	Parameter ONE bound to: 18'sb000000010000000000 
+	Parameter MINUS_ONE bound to: 18'sb111111110000000000 
+	Parameter ONE_EXT bound to: 37'sb0000000000000001000000000000000000000 
+	Parameter DIVIDEND_WIDTH bound to: 14 - type: integer 
+	Parameter DIVISOR bound to: 8 - type: integer 
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter DEPTH bound to: 8 - type: integer 
+	Parameter NUM_WORDS bound to: 96 - type: integer 
+	Parameter RAM_STYLE bound to: auto - type: string 
+	Parameter OUTPUT_REGISTER bound to: true - type: string 
+	Parameter NUM_INPUTS bound to: 24 - type: integer 
+	Parameter NUM_MACC bound to: 4 - type: integer 
+	Parameter ADDER_LAYERS bound to: 5 - type: integer 
+	Parameter OUTPUT_DATA_WIDTH bound to: 21 - type: integer 
+	Parameter DATA_WIDTH bound to: 16 - type: integer 
+	Parameter NUM_INPUTS bound to: 24 - type: integer 
+	Parameter ADDER_LAYERS bound to: 5 - type: integer 
+	Parameter OUTPUT_DATA_WIDTH bound to: 21 - type: integer 
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter IN_CHANNEL bound to: 8 - type: integer 
+	Parameter IN_WIDTH bound to: 8 - type: integer 
+	Parameter IN_HEIGHT bound to: 32 - type: integer 
+	Parameter KERNEL_0 bound to: 3 - type: integer 
+	Parameter KERNEL_1 bound to: 8 - type: integer 
+	Parameter DILATION_0 bound to: 1 - type: integer 
+	Parameter DILATION_1 bound to: 1 - type: integer 
+	Parameter PADDING_0 bound to: 1 - type: integer 
+	Parameter PADDING_1 bound to: 0 - type: integer 
+	Parameter STRIDE_0 bound to: 1 - type: integer 
+	Parameter STRIDE_1 bound to: 1 - type: integer 
+	Parameter PIXEL_WIDTH bound to: 64 - type: integer 
+	Parameter TOTAL_WIDTH bound to: 8 - type: integer 
+	Parameter WINDOW_0 bound to: 3 - type: integer 
+	Parameter WINDOW_1 bound to: 8 - type: integer 
+	Parameter KERNEL_PTS bound to: 24 - type: integer 
+	Parameter BLANK_PTS bound to: 8 - type: integer 
+	Parameter BLANK_PTS_SAFE bound to: 8 - type: integer 
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter IN_CHANNEL bound to: 8 - type: integer 
+	Parameter IN_WIDTH bound to: 8 - type: integer 
+	Parameter IN_HEIGHT bound to: 32 - type: integer 
+	Parameter KERNEL_0 bound to: 3 - type: integer 
+	Parameter KERNEL_1 bound to: 8 - type: integer 
+	Parameter DILATION_0 bound to: 1 - type: integer 
+	Parameter DILATION_1 bound to: 1 - type: integer 
+	Parameter PADDING_0 bound to: 1 - type: integer 
+	Parameter PADDING_1 bound to: 0 - type: integer 
+	Parameter STRIDE_0 bound to: 1 - type: integer 
+	Parameter STRIDE_1 bound to: 1 - type: integer 
+	Parameter PIXEL_WIDTH bound to: 64 - type: integer 
+	Parameter TOTAL_WIDTH bound to: 8 - type: integer 
+	Parameter WINDOW_0 bound to: 3 - type: integer 
+	Parameter WINDOW_1 bound to: 8 - type: integer 
+	Parameter KERNEL_PTS bound to: 24 - type: integer 
+	Parameter BLANK_PTS bound to: 8 - type: integer 
+	Parameter BLANK_PTS_SAFE bound to: 8 - type: integer 
+	Parameter COL_CNT_WIDTH bound to: 4 - type: integer 
+	Parameter ROW_CNT_WIDTH bound to: 7 - type: integer 
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter IN_CHANNEL bound to: 8 - type: integer 
+	Parameter IN_WIDTH bound to: 8 - type: integer 
+	Parameter KERNEL_0 bound to: 3 - type: integer 
+	Parameter KERNEL_1 bound to: 8 - type: integer 
+	Parameter DILATION_0 bound to: 1 - type: integer 
+	Parameter DILATION_1 bound to: 1 - type: integer 
+	Parameter PADDING_0 bound to: 1 - type: integer 
+	Parameter PADDING_1 bound to: 0 - type: integer 
+	Parameter PIXEL_WIDTH bound to: 64 - type: integer 
+	Parameter TOTAL_WIDTH bound to: 8 - type: integer 
+	Parameter WINDOW_0 bound to: 3 - type: integer 
+	Parameter WINDOW_1 bound to: 8 - type: integer 
+	Parameter KERNEL_PTS bound to: 24 - type: integer 
+	Parameter BLANK_PTS bound to: 8 - type: integer 
+	Parameter BLANK_PTS_SAFE bound to: 8 - type: integer 
+	Parameter DATA_WIDTH bound to: 64 - type: integer 
+	Parameter DEPTH bound to: 32 - type: integer 
+	Parameter ALMOST_FULL_THRES bound to: 10 - type: integer 
+	Parameter ADDR_WIDTH bound to: 5 - type: integer 
+	Parameter DEPTH bound to: 32 - type: integer 
+	Parameter ADDR_WIDTH bound to: 5 - type: integer 
+	Parameter DATA_WIDTH bound to: 64 - type: integer 
+	Parameter DEPTH bound to: 32 - type: integer 
+	Parameter RAM_STYLE bound to: auto - type: string 
+	Parameter OUTPUT_REGISTER bound to: false - type: string 
+	Parameter OUT_WIDTH bound to: 64 - type: integer 
+	Parameter OUT_HEIGHT bound to: 32 - type: integer 
+	Parameter NUM_LANES bound to: 4 - type: integer 
+	Parameter DATA_WIDTH bound to: 16 - type: integer 
+	Parameter FRAC_BITS bound to: 8 - type: integer 
+	Parameter INT_BITS bound to: 8 - type: integer 
+	Parameter ZERO_POINT_FIVE bound to: 16'sb0000000010000000 
+	Parameter IDLE bound to: 2'b00 
+	Parameter GOT_VERT_RECEIVING_CLS bound to: 2'b01 
+	Parameter NO_VERT_RECEIVING_CLS bound to: 2'b10 
+	Parameter NO_VERT_FINISHED_CLS bound to: 2'b11 
+INFO: [Synth 8-226] default block is never used [/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/post_process.v:62]
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter DEPTH bound to: 256 - type: integer 
+	Parameter NUM_WORDS bound to: 8 - type: integer 
+	Parameter RAM_STYLE bound to: auto - type: string 
+	Parameter OUTPUT_REGISTER bound to: false - type: string 
+INFO: [Common 17-41] Interrupt caught. Command should exit soon.
+INFO: [Common 17-344] 'source' was cancelled
+208 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:37 ; elapsed = 00:00:42 . Memory (MB): peak = 16792.008 ; gain = 1753.520 ; free physical = 236562 ; free virtual = 247454
+INFO: [Common 17-344] 'synth_design' was cancelled
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+set_property top QuantLaneNet_v1_0 [current_fileset]
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 24
+[Tue Nov  8 17:44:22 2022] Launched synth_1...
+Run output will be captured here: /home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/edit_QuantLaneNet_v1_0.runs/synth_1/runme.log
+close_design
+reset_run synth_1
+launch_runs synth_1 -jobs 24
+[Tue Nov  8 17:46:49 2022] Launched synth_1...
+Run output will be captured here: /home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/edit_QuantLaneNet_v1_0.runs/synth_1/runme.log
+ipx::merge_project_changes files [ipx::current_core]
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/QuantLaneNet_S00_AXI.v'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/QuantLaneNet_AXI.v'.
+WARNING: [IP_Flow 19-5226] Project source file '/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/component.xml' ignored by IP packager.
+ipx::merge_project_changes hdl_parameters [ipx::current_core]
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/QuantLaneNet_S00_AXI.v'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/src/QuantLaneNet_AXI.v'.
+WARNING: [IP_Flow 19-5226] Project source file '/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/component.xml' ignored by IP packager.
+WARNING: [IP_Flow 19-4300] HDL parameter 'C_S00_AXI_AWUSER_WIDTH' has its value changed from '1' to '0'.
+WARNING: [IP_Flow 19-4300] HDL parameter 'C_S00_AXI_ARUSER_WIDTH' has its value changed from '1' to '0'.
+WARNING: [IP_Flow 19-4300] HDL parameter 'C_S00_AXI_WUSER_WIDTH' has its value changed from '1' to '0'.
+WARNING: [IP_Flow 19-4300] HDL parameter 'C_S00_AXI_RUSER_WIDTH' has its value changed from '1' to '0'.
+WARNING: [IP_Flow 19-4300] HDL parameter 'C_S00_AXI_BUSER_WIDTH' has its value changed from '1' to '0'.
+INFO: [IP_Flow 19-3166] Bus Interface 'S00_AXI': References existing memory map 'S00_AXI'.
+ipx::update_checksums [ipx::current_core]
+ipx::save_core [ipx::current_core]
+set_property core_revision 2 [ipx::current_core]
+ipx::update_source_project_archive -component [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::check_integrity [ipx::current_core]
+INFO: [IP_Flow 19-2181] Payment Required is not set for this core.
+INFO: [IP_Flow 19-2187] The Product Guide file is missing.
+INFO: [Ipptcl 7-1486] check_integrity: Integrity check passed.
+ipx::save_core [ipx::current_core]
+ipx::move_temp_component_back -component [ipx::current_core]
+close_project -delete
+update_ip_catalog -rebuild -repo_path /home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0
+INFO: [IP_Flow 19-725] Reloaded user IP repository '/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0'
+create_bd_design "SoC"
+Wrote  : </home/hoailuan/Research/2023/proj-lane_detection_alveo/QuanNet_Alveo/QuanNet_Alveo.srcs/sources_1/bd/SoC/SoC.bd> 
+create_bd_design: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 18843.852 ; gain = 0.000 ; free physical = 235881 ; free virtual = 246837
+update_compile_order -fileset sources_1
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:xdma:4.1 xdma_0
+create_bd_cell: Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 18843.852 ; gain = 0.000 ; free physical = 235747 ; free virtual = 246723
+endgroup
+startgroup
+create_bd_cell -type ip -vlnv comparch:user:QuantLaneNet:1.0 QuantLaneNet_0
+endgroup
+WARNING: [BD 5-232] No interface pins matched 'get_bd_intf_pins -of_objects {}'
+WARNING: [BD 5-233] No interface ports matched 'get_bd_intf_ports -of_objects {}'
+WARNING: [BD 5-235] No pins matched 'get_bd_pins /xdma_0/pcie_mgt'
+INFO: [XDMA-105] pl_link_cap_max_link_width X1.
+INFO: [XDMA-105] enable_gen4 true.
+INFO: [XDMA-105] local_test true.
+INFO: [XDMA-105] pcie_blk_locn PCIE4C_X1Y0.
+INFO: [XDMA-105] range 2.5_GT/s,5.0_GT/s,8.0_GT/s,16.0_GT/s.
+apply_bd_automation -rule xilinx.com:bd_rule:xdma -config { accel {1} auto_level {IP Level} axi_clk {Maximum Data Width} axi_intf {AXI Memory Mapped} bar_size {Disable} bypass_size {Disable} c2h {4} cache_size {128k} h2c {4} lane_width {X8} link_speed {16.0 GT/s (PCIe Gen 4)}}  [get_bd_cells xdma_0]
+INFO: [XDMA-105] pl_link_cap_max_link_width X1.
+INFO: [XDMA-105] enable_gen4 true.
+INFO: [XDMA-105] local_test true.
+INFO: [XDMA-105] pcie_blk_locn PCIE4C_X1Y0.
+INFO: [XDMA-105] range 2.5_GT/s,5.0_GT/s,8.0_GT/s,16.0_GT/s.
+INFO: [board_rule 100-100] set_property CONFIG.PCIE_BOARD_INTERFACE pci_express_x8 [get_bd_cells /xdma_0]
+INFO: [BoardRule 102-8] create_bd_intf_port -mode Master -vlnv xilinx.com:interface:pcie_7x_mgt_rtl:1.0 pci_express_x8
+INFO: [BoardRule 102-9] connect_bd_intf_net /pci_express_x8 /xdma_0/pcie_mgt
+INFO: [board_rule 100-100] set_property CONFIG.SYS_RST_N_BOARD_INTERFACE pcie_perstn [get_bd_cells /xdma_0]
+INFO: [BoardRule 102-10] create_bd_port -dir I pcie_perstn -type rst
+INFO: [BoardRule 102-7] set_property CONFIG.POLARITY ACTIVE_LOW /pcie_perstn
+INFO: [BoardRule 102-15] connect_bd_net /pcie_perstn /xdma_0/sys_rst_n
+INFO: [BoardRule 102-18] set_property CONFIG.POLARITY ACTIVE_LOW /pcie_perstn
+INFO: [board_rule 100-100] set_property CONFIG.USE_BOARD_FLOW true [get_bd_cells /util_ds_buf]
+INFO: [board_rule 100-100] set_property CONFIG.DIFF_CLK_IN_BOARD_INTERFACE pcie_refclk [get_bd_cells /util_ds_buf]
+INFO: [BoardRule 102-8] create_bd_intf_port -mode Slave -vlnv xilinx.com:interface:diff_clock_rtl:1.0 pcie_refclk
+INFO: [BoardRule 102-4] set_property CONFIG.FREQ_HZ 100000000 /pcie_refclk
+INFO: [BoardRule 102-9] connect_bd_intf_net /pcie_refclk /util_ds_buf/CLK_IN_D
+INFO: [BoardRule 102-16] set_property CONFIG.FREQ_HZ 100000000 /pcie_refclk
+apply_bd_automation: Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 18843.852 ; gain = 0.000 ; free physical = 235696 ; free virtual = 246713
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {/xdma_0/axi_aclk (250 MHz)} Clk_slave {Auto} Clk_xbar {Auto} Master {/xdma_0/M_AXI} Slave {/QuantLaneNet_0/S00_AXI} ddr_seg {Auto} intc_ip {New AXI SmartConnect} master_apm {0}}  [get_bd_intf_pins QuantLaneNet_0/S00_AXI]
+Slave segment '/QuantLaneNet_0/S00_AXI/S00_AXI_mem' is being assigned into address space '/xdma_0/M_AXI' at <0x7600_0000 [ 64K ]>.
+regenerate_bd_layout
+set_property range 1M [get_bd_addr_segs {xdma_0/M_AXI/SEG_QuantLaneNet_0_S00_AXI_mem}]
+save_bd_design
+Wrote  : </home/hoailuan/Research/2023/proj-lane_detection_alveo/QuanNet_Alveo/QuanNet_Alveo.srcs/sources_1/bd/SoC/SoC.bd> 
+Wrote  : </home/hoailuan/Research/2023/proj-lane_detection_alveo/QuanNet_Alveo/QuanNet_Alveo.srcs/sources_1/bd/SoC/ui/bd_53446aa7.ui> 
+make_wrapper -files [get_files /home/hoailuan/Research/2023/proj-lane_detection_alveo/QuanNet_Alveo/QuanNet_Alveo.srcs/sources_1/bd/SoC/SoC.bd] -top
+Wrote  : </home/hoailuan/Research/2023/proj-lane_detection_alveo/QuanNet_Alveo/QuanNet_Alveo.srcs/sources_1/bd/SoC/SoC.bd> 
+VHDL Output written to : /home/hoailuan/Research/2023/proj-lane_detection_alveo/QuanNet_Alveo/QuanNet_Alveo.gen/sources_1/bd/SoC/synth/SoC.v
+VHDL Output written to : /home/hoailuan/Research/2023/proj-lane_detection_alveo/QuanNet_Alveo/QuanNet_Alveo.gen/sources_1/bd/SoC/sim/SoC.v
+VHDL Output written to : /home/hoailuan/Research/2023/proj-lane_detection_alveo/QuanNet_Alveo/QuanNet_Alveo.gen/sources_1/bd/SoC/hdl/SoC_wrapper.v
+make_wrapper: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 19674.035 ; gain = 0.000 ; free physical = 235639 ; free virtual = 246674
+add_files -norecurse /home/hoailuan/Research/2023/proj-lane_detection_alveo/QuanNet_Alveo/QuanNet_Alveo.gen/sources_1/bd/SoC/hdl/SoC_wrapper.v
+set_property synth_checkpoint_mode None [get_files  /home/hoailuan/Research/2023/proj-lane_detection_alveo/QuanNet_Alveo/QuanNet_Alveo.srcs/sources_1/bd/SoC/SoC.bd]
+generate_target all [get_files  /home/hoailuan/Research/2023/proj-lane_detection_alveo/QuanNet_Alveo/QuanNet_Alveo.srcs/sources_1/bd/SoC/SoC.bd]
+INFO: [BD 41-1662] The design 'SoC.bd' is already validated. Therefore parameter propagation will not be re-run.
+Wrote  : </home/hoailuan/Research/2023/proj-lane_detection_alveo/QuanNet_Alveo/QuanNet_Alveo.srcs/sources_1/bd/SoC/SoC.bd> 
+Wrote  : </home/hoailuan/Research/2023/proj-lane_detection_alveo/QuanNet_Alveo/QuanNet_Alveo.srcs/sources_1/bd/SoC/ui/bd_53446aa7.ui> 
+VHDL Output written to : /home/hoailuan/Research/2023/proj-lane_detection_alveo/QuanNet_Alveo/QuanNet_Alveo.gen/sources_1/bd/SoC/synth/SoC.v
+VHDL Output written to : /home/hoailuan/Research/2023/proj-lane_detection_alveo/QuanNet_Alveo/QuanNet_Alveo.gen/sources_1/bd/SoC/sim/SoC.v
+VHDL Output written to : /home/hoailuan/Research/2023/proj-lane_detection_alveo/QuanNet_Alveo/QuanNet_Alveo.gen/sources_1/bd/SoC/hdl/SoC_wrapper.v
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xdma_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block QuantLaneNet_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block util_ds_buf .
+Exporting to file /home/hoailuan/Research/2023/proj-lane_detection_alveo/QuanNet_Alveo/QuanNet_Alveo.gen/sources_1/bd/SoC/ip/SoC_axi_smc_0/bd_0/hw_handoff/SoC_axi_smc_0.hwh
+Generated Block Design Tcl file /home/hoailuan/Research/2023/proj-lane_detection_alveo/QuanNet_Alveo/QuanNet_Alveo.gen/sources_1/bd/SoC/ip/SoC_axi_smc_0/bd_0/hw_handoff/SoC_axi_smc_0_bd.tcl
+Generated Hardware Definition File /home/hoailuan/Research/2023/proj-lane_detection_alveo/QuanNet_Alveo/QuanNet_Alveo.gen/sources_1/bd/SoC/ip/SoC_axi_smc_0/bd_0/synth/SoC_axi_smc_0.hwdef
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_smc .
+Exporting to file /home/hoailuan/Research/2023/proj-lane_detection_alveo/QuanNet_Alveo/QuanNet_Alveo.gen/sources_1/bd/SoC/hw_handoff/SoC.hwh
+Generated Block Design Tcl file /home/hoailuan/Research/2023/proj-lane_detection_alveo/QuanNet_Alveo/QuanNet_Alveo.gen/sources_1/bd/SoC/hw_handoff/SoC_bd.tcl
+Generated Hardware Definition File /home/hoailuan/Research/2023/proj-lane_detection_alveo/QuanNet_Alveo/QuanNet_Alveo.gen/sources_1/bd/SoC/synth/SoC.hwdef
+generate_target: Time (s): cpu = 00:00:18 ; elapsed = 00:00:25 . Memory (MB): peak = 20069.680 ; gain = 0.000 ; free physical = 235556 ; free virtual = 246640
+export_ip_user_files -of_objects [get_files /home/hoailuan/Research/2023/proj-lane_detection_alveo/QuanNet_Alveo/QuanNet_Alveo.srcs/sources_1/bd/SoC/SoC.bd] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files /home/hoailuan/Research/2023/proj-lane_detection_alveo/QuanNet_Alveo/QuanNet_Alveo.srcs/sources_1/bd/SoC/SoC.bd] -directory /home/hoailuan/Research/2023/proj-lane_detection_alveo/QuanNet_Alveo/QuanNet_Alveo.ip_user_files/sim_scripts -ip_user_files_dir /home/hoailuan/Research/2023/proj-lane_detection_alveo/QuanNet_Alveo/QuanNet_Alveo.ip_user_files -ipstatic_source_dir /home/hoailuan/Research/2023/proj-lane_detection_alveo/QuanNet_Alveo/QuanNet_Alveo.ip_user_files/ipstatic -lib_map_path [list {modelsim=/home/hoailuan/Research/2023/proj-lane_detection_alveo/QuanNet_Alveo/QuanNet_Alveo.cache/compile_simlib/modelsim} {questa=/home/hoailuan/Research/2023/proj-lane_detection_alveo/QuanNet_Alveo/QuanNet_Alveo.cache/compile_simlib/questa} {ies=/home/hoailuan/Research/2023/proj-lane_detection_alveo/QuanNet_Alveo/QuanNet_Alveo.cache/compile_simlib/ies} {xcelium=/home/hoailuan/Research/2023/proj-lane_detection_alveo/QuanNet_Alveo/QuanNet_Alveo.cache/compile_simlib/xcelium} {vcs=/home/hoailuan/Research/2023/proj-lane_detection_alveo/QuanNet_Alveo/QuanNet_Alveo.cache/compile_simlib/vcs} {riviera=/home/hoailuan/Research/2023/proj-lane_detection_alveo/QuanNet_Alveo/QuanNet_Alveo.cache/compile_simlib/riviera}] -use_ip_compiled_libs -force -quiet
+launch_runs impl_1 -to_step write_bitstream -jobs 28
+[Tue Nov  8 18:07:44 2022] Launched synth_1...
+Run output will be captured here: /home/hoailuan/Research/2023/proj-lane_detection_alveo/QuanNet_Alveo/QuanNet_Alveo.runs/synth_1/runme.log
+[Tue Nov  8 18:07:44 2022] Launched impl_1...
+Run output will be captured here: /home/hoailuan/Research/2023/proj-lane_detection_alveo/QuanNet_Alveo/QuanNet_Alveo.runs/impl_1/runme.log
+ipx::edit_ip_in_project -upgrade true -name QuantLaneNet_v1_0_project -directory /home/hoailuan/Research/2023/proj-lane_detection_alveo/QuanNet_Alveo/QuanNet_Alveo.tmp/QuantLaneNet_v1_0_project /home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/component.xml
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/xilinx/Vivado/2020.2/data/ip'.
+create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 20684.613 ; gain = 0.000 ; free physical = 235566 ; free virtual = 246768
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0'.
+INFO: [IP_Flow 19-795] Syncing license key meta-data
+ipx::edit_ip_in_project: Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 20684.613 ; gain = 0.000 ; free physical = 235572 ; free virtual = 246775
+update_compile_order -fileset sources_1
+ipx::merge_project_changes hdl_parameters [ipx::current_core]
+WARNING: [IP_Flow 19-5226] Project source file '/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0/component.xml' ignored by IP packager.
+WARNING: [IP_Flow 19-4300] HDL parameter 'C_S00_AXI_AWUSER_WIDTH' has its value changed from '1' to '0'.
+WARNING: [IP_Flow 19-4300] HDL parameter 'C_S00_AXI_ARUSER_WIDTH' has its value changed from '1' to '0'.
+WARNING: [IP_Flow 19-4300] HDL parameter 'C_S00_AXI_WUSER_WIDTH' has its value changed from '1' to '0'.
+WARNING: [IP_Flow 19-4300] HDL parameter 'C_S00_AXI_RUSER_WIDTH' has its value changed from '1' to '0'.
+WARNING: [IP_Flow 19-4300] HDL parameter 'C_S00_AXI_BUSER_WIDTH' has its value changed from '1' to '0'.
+INFO: [IP_Flow 19-3166] Bus Interface 'S00_AXI': References existing memory map 'S00_AXI'.
+ipx::update_checksums [ipx::current_core]
+ipx::save_core [ipx::current_core]
+set_property core_revision 3 [ipx::current_core]
+ipx::update_source_project_archive -component [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::check_integrity [ipx::current_core]
+INFO: [IP_Flow 19-2181] Payment Required is not set for this core.
+INFO: [IP_Flow 19-2187] The Product Guide file is missing.
+INFO: [Ipptcl 7-1486] check_integrity: Integrity check passed.
+ipx::save_core [ipx::current_core]
+ipx::move_temp_component_back -component [ipx::current_core]
+close_project -delete
+update_ip_catalog -rebuild -repo_path /home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0
+INFO: [IP_Flow 19-725] Reloaded user IP repository '/home/hoailuan/Research/2023/proj-lane_detection_alveo/ip_repo/QuantLaneNet_1.0'
+report_ip_status -name ip_status 
+upgrade_ip -vlnv comparch:user:QuantLaneNet:1.0 [get_ips  SoC_QuantLaneNet_0_0] -log ip_upgrade.log
+Upgrading '/home/hoailuan/Research/2023/proj-lane_detection_alveo/QuanNet_Alveo/QuanNet_Alveo.srcs/sources_1/bd/SoC/SoC.bd'
+INFO: [IP_Flow 19-3422] Upgraded SoC_QuantLaneNet_0_0 (QuantLaneNet_v1.0 1.0) from revision 2 to revision 3
+Wrote  : </home/hoailuan/Research/2023/proj-lane_detection_alveo/QuanNet_Alveo/QuanNet_Alveo.srcs/sources_1/bd/SoC/SoC.bd> 
+Wrote  : </home/hoailuan/Research/2023/proj-lane_detection_alveo/QuanNet_Alveo/QuanNet_Alveo.srcs/sources_1/bd/SoC/ui/bd_53446aa7.ui> 
+INFO: [Coretcl 2-1525] Wrote upgrade log to '/home/hoailuan/Research/2023/proj-lane_detection_alveo/QuanNet_Alveo/ip_upgrade.log'.
+export_ip_user_files -of_objects [get_ips SoC_QuantLaneNet_0_0] -no_script -sync -force -quiet
+generate_target all [get_files  /home/hoailuan/Research/2023/proj-lane_detection_alveo/QuanNet_Alveo/QuanNet_Alveo.srcs/sources_1/bd/SoC/SoC.bd]
+Wrote  : </home/hoailuan/Research/2023/proj-lane_detection_alveo/QuanNet_Alveo/QuanNet_Alveo.srcs/sources_1/bd/SoC/SoC.bd> 
+VHDL Output written to : /home/hoailuan/Research/2023/proj-lane_detection_alveo/QuanNet_Alveo/QuanNet_Alveo.gen/sources_1/bd/SoC/synth/SoC.v
+VHDL Output written to : /home/hoailuan/Research/2023/proj-lane_detection_alveo/QuanNet_Alveo/QuanNet_Alveo.gen/sources_1/bd/SoC/sim/SoC.v
+VHDL Output written to : /home/hoailuan/Research/2023/proj-lane_detection_alveo/QuanNet_Alveo/QuanNet_Alveo.gen/sources_1/bd/SoC/hdl/SoC_wrapper.v
+INFO: [BD 41-1029] Generation completed for the IP Integrator block QuantLaneNet_0 .
+Exporting to file /home/hoailuan/Research/2023/proj-lane_detection_alveo/QuanNet_Alveo/QuanNet_Alveo.gen/sources_1/bd/SoC/ip/SoC_axi_smc_0/bd_0/hw_handoff/SoC_axi_smc_0.hwh
+Generated Block Design Tcl file /home/hoailuan/Research/2023/proj-lane_detection_alveo/QuanNet_Alveo/QuanNet_Alveo.gen/sources_1/bd/SoC/ip/SoC_axi_smc_0/bd_0/hw_handoff/SoC_axi_smc_0_bd.tcl
+Generated Hardware Definition File /home/hoailuan/Research/2023/proj-lane_detection_alveo/QuanNet_Alveo/QuanNet_Alveo.gen/sources_1/bd/SoC/ip/SoC_axi_smc_0/bd_0/synth/SoC_axi_smc_0.hwdef
+Exporting to file /home/hoailuan/Research/2023/proj-lane_detection_alveo/QuanNet_Alveo/QuanNet_Alveo.gen/sources_1/bd/SoC/hw_handoff/SoC.hwh
+Generated Block Design Tcl file /home/hoailuan/Research/2023/proj-lane_detection_alveo/QuanNet_Alveo/QuanNet_Alveo.gen/sources_1/bd/SoC/hw_handoff/SoC_bd.tcl
+Generated Hardware Definition File /home/hoailuan/Research/2023/proj-lane_detection_alveo/QuanNet_Alveo/QuanNet_Alveo.gen/sources_1/bd/SoC/synth/SoC.hwdef
+generate_target: Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 20819.473 ; gain = 0.000 ; free physical = 235547 ; free virtual = 246746
+export_ip_user_files -of_objects [get_files /home/hoailuan/Research/2023/proj-lane_detection_alveo/QuanNet_Alveo/QuanNet_Alveo.srcs/sources_1/bd/SoC/SoC.bd] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files /home/hoailuan/Research/2023/proj-lane_detection_alveo/QuanNet_Alveo/QuanNet_Alveo.srcs/sources_1/bd/SoC/SoC.bd] -directory /home/hoailuan/Research/2023/proj-lane_detection_alveo/QuanNet_Alveo/QuanNet_Alveo.ip_user_files/sim_scripts -ip_user_files_dir /home/hoailuan/Research/2023/proj-lane_detection_alveo/QuanNet_Alveo/QuanNet_Alveo.ip_user_files -ipstatic_source_dir /home/hoailuan/Research/2023/proj-lane_detection_alveo/QuanNet_Alveo/QuanNet_Alveo.ip_user_files/ipstatic -lib_map_path [list {modelsim=/home/hoailuan/Research/2023/proj-lane_detection_alveo/QuanNet_Alveo/QuanNet_Alveo.cache/compile_simlib/modelsim} {questa=/home/hoailuan/Research/2023/proj-lane_detection_alveo/QuanNet_Alveo/QuanNet_Alveo.cache/compile_simlib/questa} {ies=/home/hoailuan/Research/2023/proj-lane_detection_alveo/QuanNet_Alveo/QuanNet_Alveo.cache/compile_simlib/ies} {xcelium=/home/hoailuan/Research/2023/proj-lane_detection_alveo/QuanNet_Alveo/QuanNet_Alveo.cache/compile_simlib/xcelium} {vcs=/home/hoailuan/Research/2023/proj-lane_detection_alveo/QuanNet_Alveo/QuanNet_Alveo.cache/compile_simlib/vcs} {riviera=/home/hoailuan/Research/2023/proj-lane_detection_alveo/QuanNet_Alveo/QuanNet_Alveo.cache/compile_simlib/riviera}] -use_ip_compiled_libs -force -quiet
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 28
+[Wed Nov  9 09:40:30 2022] Launched synth_1...
+Run output will be captured here: /home/hoailuan/Research/2023/proj-lane_detection_alveo/QuanNet_Alveo/QuanNet_Alveo.runs/synth_1/runme.log
+[Wed Nov  9 09:40:30 2022] Launched impl_1...
+Run output will be captured here: /home/hoailuan/Research/2023/proj-lane_detection_alveo/QuanNet_Alveo/QuanNet_Alveo.runs/impl_1/runme.log
+exit

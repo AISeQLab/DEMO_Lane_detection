@@ -1,0 +1,6 @@
+vhdl xil_defaultlib  \
+"../../../bd/SoC/ip/SoC_util_ds_buf_0/util_ds_buf.vhd" \
+"../../../bd/SoC/ip/SoC_util_ds_buf_0/sim/SoC_util_ds_buf_0.vhd" \
+"../../../bd/SoC/ip/SoC_axi_smc_0/bd_0/ip/ip_1/sim/bd_d7be_psr_aclk_0.vhd" \
+
+nosort
