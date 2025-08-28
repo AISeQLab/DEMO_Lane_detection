@@ -1,2 +1,3 @@
-# DEMO_Lane_detection
+# Lane detection accelerator
+
 A lane detection accelerator (CNN) on Alveo FPGA
